@@ -1,4 +1,4 @@
-import java.util.Lists;
+import java.util.List;
 import java.util.Scanner;
 
 public class Consola {
@@ -9,9 +9,10 @@ public class Consola {
     }
 
     public void mostrarInstrucciones(int filas, int cols) {
+        println("");
         println("=== Juego de memoria ===");
         println("Tablero: " + filas + " X " + cols + "(" + (filas*cols) + " celdas)");
-        println("Reglas: ")
+        println("Reglas: ");
         println("- Dos jugadores se turnan para destapar dos casillas por turno");
         println("- Si las casillas coinciden, ganan un punto y siguen jugando");
         println("- Si las casillas no coinciden, se tapan y pasa el turno");
@@ -42,20 +43,20 @@ public class Consola {
 
     public void mostrarMarcador(List<Jugador> jugadores, int turnoActual) {
         print("Marcador: ");
-        for (int i = 0; i < jugadores.size; i++) {
+        for (int i = 0; i < jugadores.size(); i++) {
             Jugador j = jugadores.get(i);
             if (i > 0) {
-                print(" | ")
+                print(" | ");
             }
-            print(j);
+            print(j.getNombre() + ": " + j.getPares() + " pares");
             if (i == turnoActual) {
-                print ("⬅️ turno")
+                print (" ⬅️ turno");
             }
         }
         println("");
     }
 
-    public void mostrarMensaje(String mensaje) { ///???? será necesario
+    public void mostrarMensaje(String mensaje) { 
         println(mensaje);
     }
 
@@ -64,6 +65,12 @@ public class Consola {
         return this.sc.nextLine();
     }
 
+    public int pedirNumero(String prompt) {
+        print(prompt);
+        int numero = this.sc.nextInt();
+        this.sc.nextLine(); 
+        return numero;
+    }
 
     //Helpers
     public void print(String s) {
@@ -71,6 +78,6 @@ public class Consola {
     }
 
     public void println(String s) {
-        System.out.prinln(s);
+        System.out.println(s);
     }
 }

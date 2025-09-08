@@ -1,5 +1,5 @@
 public class Jugador {
-    private final Stirng nombre; //nombre del jugador
+    private final String nombre; //nombre del jugador
     private int pares; //pares encontrados
 
     public Jugador(String nombre) {

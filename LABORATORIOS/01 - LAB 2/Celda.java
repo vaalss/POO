@@ -27,7 +27,7 @@ public class Celda {
         this.emparejada = emparejada;
     }
 
-    public boolean setVisibleTemporal(boolean visibleTemporal) {
+    public void setVisibleTemporal(boolean visibleTemporal) {
         this.visibleTemporal = visibleTemporal;
     }
 

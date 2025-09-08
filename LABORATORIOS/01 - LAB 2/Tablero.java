@@ -39,7 +39,7 @@ public class Tablero {
 
         for (int i = 0; i < this.filas; i++) { //llena todas las casillas con null
             for (int j = 0; j < this.cols; j++) {
-                this.celda[i][j] = null;
+                this.celdas[i][j] = null;
             }
         }
 
