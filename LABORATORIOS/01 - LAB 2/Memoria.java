@@ -15,6 +15,7 @@ public class Memoria {
     }
 
     public void jugar() {
+        this.vista.mostrarMensaje("");        
         this.vista.mostrarMensaje("=== Juego de Memoria ===");        
         String nombre1 = this.vista.pedirEntrada("Ingresa el nombre del jugador 1: ");
         String nombre2 = this.vista.pedirEntrada("Ingresa el nombre del jugador 2: ");
@@ -81,6 +82,16 @@ public class Memoria {
         }
         this.vista.dibujarTablero(this.tablero);
         this.vista.mostrarMensaje(calcularGanador());
+
+        this.vista.mostrarMensaje("Escribe: \n- SALIR para terminar\n-REINICIAR para jugar otra ronda");
+        String opcion = this.vista.pedirEntrada("");
+        opcion = opcion.trim().toUpperCase();
+
+        if (opcion.equals("REINICIAR")) {
+            jugar();
+        } else {
+            this.vista.mostrarMensaje("¡Gracias por jugar!");
+        }
     }
 
     private int[][] parsearEntrada(String entrada) {
