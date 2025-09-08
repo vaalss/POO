@@ -84,27 +84,26 @@ public class Memoria {
     }
 
     private int[][] parsearEntrada(String entrada) {
-        String[] partes = entrada.split(" "); //separa las coordenadas ingresadas por el usuario
+        String[] partes = entrada.split("\\s+"); //separa las coordenadas ingresadas por el usuario
         if (partes.length != 2) { //si no se ingresaron dos coordenadas la entrada es inválida
             return null;
         }
 
         int[][] coords = new int[2][2]; //devuelve un arreglo con dos coordenadas: [[fila1,col1],[fila2,col2]]
         for (int i = 0; i < 2; i++) {
-            String casilla = partes[i];
-
+            String casilla = partes[i].trim();
             if (casilla.length() < 2) { //si la casilla no tiene al menos 2 caracteres la entrada es inválida
                 return null;
             }
 
             char letra = casilla.charAt(0); //devuelve el primer caracter (la letra indica la fila)
 
-            if (letra < 'A' || letra > 'A' + tablero.getFilas()) { //si la letra no está dentro del rango del tablero la entrada es inválida
+            if (letra < 'A' || letra >= 'A' + tablero.getFilas()) { //si la letra no está dentro del rango del tablero la entrada es inválida
                 return null;
             }
 
             String numero = casilla.substring(1); //el resto de la casilla son los número de la columna
-            for (int k = 0; i < numero.length(); k++) {
+            for (int k = 0; k < numero.length(); k++) {
                 if (!Character.isDigit(numero.charAt(k))) {
                     return null; //si no son números la entrada es inválida
                 }

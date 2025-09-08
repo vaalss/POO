@@ -30,7 +30,12 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return this.nombre + ": " + this.pares + " pares encontrados";
+        if (this.pares == 1) {
+            return this.nombre + "(" + this.pares + " par encontrado)";
+        }
+        else {
+            return this.nombre + "(" + this.pares + " pares encontrados)";
+        }
     }
 
 }
