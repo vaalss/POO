@@ -31,10 +31,10 @@ public class Jugador {
     @Override
     public String toString() {
         if (this.pares == 1) {
-            return this.nombre + "(" + this.pares + " par encontrado)";
+            return this.nombre + " (" + this.pares + " par encontrado)";
         }
         else {
-            return this.nombre + "(" + this.pares + " pares encontrados)";
+            return this.nombre + " (" + this.pares + " pares encontrados)";
         }
     }
 

@@ -66,12 +66,12 @@ public class Memoria {
                     String e1 = tablero.getCelda(primera[0], primera[1]).getEmoji();
                     String e2 = tablero.getCelda(segunda[0], segunda[1]).getEmoji();
 
-                    if (e1.equals(e2)) {
+                    if (e1.equals(e2)) { //si ambos emojis son iguales se anota un par al jugador
                         tablero.getCelda(primera[0], primera[1]).setEmparejada(true);
                         tablero.getCelda(segunda[0], segunda[1]).setEmparejada(true);
                         jugadores.get(turnoActual).anotarPar();
                         this.vista.mostrarMensaje("¡Adivinaste! Sigue jugando");
-                    } else {
+                    } else { //si los emojis no son iguales se pasa el turno al siguiente jugador
                         tablero.getCelda(primera[0], primera[1]).setVisibleTemporal(false);
                         tablero.getCelda(segunda[0], segunda[1]).setVisibleTemporal(false);
                         this.vista.mostrarMensaje("No adivinaste. Pasa el turno");
@@ -83,6 +83,7 @@ public class Memoria {
         this.vista.dibujarTablero(this.tablero);
         this.vista.mostrarMensaje(calcularGanador());
 
+        this.vista.mostrarMensaje("");
         this.vista.mostrarMensaje("Escribe: \n- SALIR para terminar\n-REINICIAR para jugar otra ronda");
         String opcion = this.vista.pedirEntrada("");
         opcion = opcion.trim().toUpperCase();
