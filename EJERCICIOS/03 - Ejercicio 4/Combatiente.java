@@ -1,3 +1,5 @@
+import java.util.List;
+
 public abstract class Combatiente {
     protected String nombre;
     protected int vidaActual;
