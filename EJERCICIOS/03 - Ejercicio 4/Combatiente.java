@@ -30,4 +30,16 @@ public abstract class Combatiente {
             mensajeFinal();
         }
     }
+
+    public String mensajeInicio() {
+        return nombre + " entra en combate";
+    }
+
+    public String mensajeFinal() {
+        if (!vivo) {
+            return nombre + " ha sido derrotado";
+        } esle if (vivo && batalla.verificarFn()) {
+            return nombre + " ha ganado la batalla";
+        }
+    }
 }
