@@ -42,4 +42,16 @@ public abstract class Combatiente {
             return nombre + " ha ganado la batalla";
         }
     }
+
+    public boolean isVivo() {
+        return this.vivo;
+    }
+
+    public int getVidaActual() {
+        return this.vidaActual;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
 }
