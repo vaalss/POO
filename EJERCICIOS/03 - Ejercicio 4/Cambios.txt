@@ -1,0 +1,54 @@
+CAMBIOS A DISEÑO DEL EJERCICIO:
+
+- Eliminé los enums para manejar los diferentes tipos de combatientes desde las subclases y especificar en las instancias
+- Agregué una clase Habilidad, similar a la de Item para poder listarlas y manejar sus efectos de forma más limpia
+
+- Clase Combatiente:
+  - eliminé el atributo vivo, para manejarlo desde un método con vidaActual, así evitar atributos innecesarios
+  - agregué atributos bando y tipo para clasificar a los combatientes en los dos equipos y según su tipo para facilitar la
+    selección de al menos un jugador y enemigo de cada tipo
+  - eliminé el método atacar, porque ya se manejaba esa lógica en recibirAtaque
+  - moví los métodos para mostrar mensajes de inicio y fin para la clase de Jugador, porque solo los jugadores tienen ese
+    comportamiento
+  - Agregué los getters y setters necesarios (que no estaban especificados en el UML) y agregué el método status para
+    acceder más fácilmente al estado de cada combatiente al finalizar cada ronda
+
+- Clase Jugador:
+  - eliminé el atributo rol por lo mencionado anteriormente
+  - agregué los métodos para mostrar mensajes
+  - eliminé el método elegirAcción porque eso se controla desde la Consola
+  - eliminé el método elegirObjetivo porque se maneja de forma aleatoria en Batalla
+  - sobrescribí el método toString y agregué los getters necesarios (no estaba especificado en el UML)
+
+- Clase Enemigo:
+  - eliminé el atributo esJefe, porque eso se maneja con el atributo tipo de la clase Combatiente
+  - eliminé los métodos elegirAccion y elegirObjetivo por la misma razón que en la clase Jugador
+  - sobrescribí el método toString y agregué los getters necesarios (no estaba especificado en el UML)
+
+  - el método usarHabilidad se implementa de la misma forma para ambos tipos de enemigos por lo que no fue necesario
+    sobrescribirlo para cada uno
+
+- Clase Batalla:
+  - agregué un random para manejar la cantidad de enemigos y jugadores que batallan y quién recibe los ataques
+  - en lugar de tener una sola lista de Combatientes, opté por tener una lista con opciones de jugadores cazadores y guerreros,
+    de las cuales el usuario puede escoger cuales utilizar, y agregarlas a una lista de jugadores (lo mismo con los enemigos,
+    pero el usuario no escoge estos, sino que se hace de forma aleatoria). Decidí tener listas separadas para cada tipo de jugador
+    y enemigo para asegurarme de forma más sencilla que se escoja al menos un jugador y enemigo de cada tipo
+  - agregué un método jugar, para poder instancias los jugadores, enemigos, items y habilidades en iniciar, y tener la lógica 
+    del juego en jugar, para que fuera más limpio
+  - eliminé el método ejecutarTurno porque dentro del método jugar se tiene toda la lógica para ejecutar los turnos
+  - eliminé el método para actualizarAcciones porque se maneja dentro de jugar al finalizar cada turno
+  - el método mostrarEstado lo moví a consola para manejar los prints desde allí
+  - agregué un método ganador para determinar que bando ganó la batalla
+
+- Clase Consola:
+  - olvidé agregar el scanner en el UML
+  - agregué un método bienvenida para mostrar las reglas del juego
+  - dividí el método menuSeleccion en dos para manejar la selección de exploradores y guerreros por separado
+  - agregué un método para mostrar a todos los combatientes de la batalla
+  - renombre el método estado a mostrarStatus
+  - agregué métodos para mostrar los items y habilidades
+  - renombre el método para mostrar las acciones recientes
+  - agregué un método para mostrar mensajes
+  - separé el método opcionUsuario para manejar los Strings e ints por separado
+  - los menús de acciones retornan void, porque se maneja desde las métodos de pedir entrada
