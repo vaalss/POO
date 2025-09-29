@@ -20,7 +20,7 @@ public class Item {
             if (vidaNueva > jugador.getVidaTotal()) {
                 jugador.setVidaActual(jugador.getVidaTotal());
             } else {
-                jugador.setVidaActual(vidaNueva)
+                jugador.setVidaActual(vidaNueva);
             }
         }
     }
@@ -31,6 +31,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "(" + nombre + ", " + tipo + ", " + efecto + ")"
+        return "(" + nombre + ", " + tipo + ", " + efecto + ")";
     }
 }

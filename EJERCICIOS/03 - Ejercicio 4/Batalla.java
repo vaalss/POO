@@ -137,7 +137,7 @@ public class Batalla {
                         }
                     } else { //turno de los enemigos
                         int objetivo_A_E_I = rand.nextInt(jugadores.size()); //objetivo del ataque del enemigo (índice)
-                        Jugador objetivo_A_E = jugadores.get(objetivo_A_E_I)
+                        Jugador objetivo_A_E = jugadores.get(objetivo_A_E_I);
                         objetivo_A_E.recibirAtaque(enemigoTurno.getAtaque(), enemigos, jugadores, turnoE, objetivo_A_E_I, cantEnemigos, cantJugadores);
                         if (objetivo_A_E.vivo()) {
                             acciones.add(enemigoTurno.getNombre() + " ha atacado a " + objetivo_A_E.getNombre());
@@ -207,7 +207,7 @@ public class Batalla {
         boolean jVivos = false;
         for (Jugador j : jugadores) {
             if(j.getVidaActual() > 0) {
-                jVivos = true //al menos un jugador sigue vivo
+                jVivos = true; //al menos un jugador sigue vivo
             }
         }
         boolean eVivos = false;
@@ -240,4 +240,6 @@ public class Batalla {
             vista.mostrarMensaje("¡La batalla ha finalizado en empate!");
         }
     }
+
+
 }

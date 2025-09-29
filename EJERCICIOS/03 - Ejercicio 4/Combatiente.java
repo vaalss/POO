@@ -2,8 +2,8 @@ import java.util.List;
 
 public abstract class Combatiente {
     protected String nombre;
-    protected int vidaActual;
     protected int vidaTotal;
+    protected int vidaActual;
     protected int ataque;
     protected String bando;
     protected String tipo;
@@ -16,6 +16,7 @@ public abstract class Combatiente {
         this.bando = bando;
         this.tipo = tipo;
     }
+
 
     public void recibirAtaque(int cantidad, List<Enemigo> enemigos, List<Jugador> jugadores, int e, int j, int cantEnemigos, int cantJugadores) {
         this.vidaActual -= cantidad;

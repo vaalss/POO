@@ -20,7 +20,7 @@ public class Consola {
         println("La batalla tendrá " + e + " enemigos y " + j + " jugadores");
     }
 
-    public void menuSeleccionG() { //método para seleccionar los jugadores guerreros
+    public void menuSeleccionG(List<Jugador> jugadoresG) { //método para seleccionar los jugadores guerreros
         println("");
         println("--- Jugadores Guerreros: ---");
         int contadorJ = 1;
@@ -31,7 +31,7 @@ public class Consola {
         println("");
     }
 
-    public void menuSeleccionE() { //método para seleccionar los jugadores exploradores
+    public void menuSeleccionE(List<Jugador> jugadoresE) { //método para seleccionar los jugadores exploradores
         println("");
         int contadorJ = 1;
         println("--- Jugadores Exploradores: ---");
@@ -42,7 +42,7 @@ public class Consola {
         println("");
     }
 
-    public void mostrarCombatientes() {
+    public void mostrarCombatientes(List<Jugador> jugadores, List<Enemigo> enemigos) {
         println("");
         println("--- COMBATIENTES ---");
         println("");
@@ -86,7 +86,7 @@ public class Consola {
         }
     }
 
-    public void mostrarStatus() {
+    public void mostrarStatus(List<Jugador> jugadores, List<Enemigo> enemigos) {
         println("");
         println("Status de los combatientes: ");
         println("- Jugadores:");
@@ -119,7 +119,7 @@ public class Consola {
         }
     }
 
-    public void mostrarAcciones() {
+    public void mostrarAcciones(List<String> acciones) {
         println("");
         println("Últimas acciones: ");
         if (acciones.size() > 3) {

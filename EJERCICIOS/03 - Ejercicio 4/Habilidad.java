@@ -18,9 +18,9 @@ public class Habilidad {
             int vida = jugador.getVidaActual();
             int vidaNueva = vida += efecto;
             if (vidaNueva > jugador.getVidaTotal()) {
-                enemigo.setVidaActual(vida)
+                enemigo.setVidaActual(vida);
             } else {
-                enemigo.setVidaActual(vidaNueva)
+                enemigo.setVidaActual(vidaNueva);
             }
         }
     }
