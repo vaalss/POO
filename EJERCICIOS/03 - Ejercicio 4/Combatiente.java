@@ -5,55 +5,65 @@ public abstract class Combatiente {
     protected int vidaActual;
     protected int vidaTotal;
     protected int ataque;
-    protected boolean vivo;
+    protected String bando;
+    protected String tipo;
 
-    public Combatiente(String nombre, int vidaTotal, int ataque) {
+    public Combatiente(String nombre, int vidaTotal, int ataque, String bando, String tipo) {
         this.nombre = nombre;
-        this.vidaActual = vidaActual;
         this.vidaTotal = vidaTotal;
+        this.vidaActual = vidaTotal;
         this.ataque = ataque;
-        this.vivo = true; //todos los combatientes inician vivos
+        this.bando = bando;
+        this.tipo = tipo;
     }
 
-    public abstract void tomarTurno(List<Combatiente> objetivos); //método abstracto para que las subclases implementen su propio método
-
-    public void atacar(Combatiente objetivo) {
-        objetivo.recibirAtaque(ataque);
-    }
-
-    public void recibirAtaque(int cantidad) {
-        vidaActual -= cantidad;
-        if (vidaActual > vidaTotal) {
-            vidaActual = vidaTotal;
-        }
+    public void recibirAtaque(int cantidad, List<Enemigo> enemigos, List<Jugador> jugadores, int e, int j, int cantEnemigos, int cantJugadores) {
+        this.vidaActual -= cantidad;
         if (vidaActual <= 0) {
             vidaActual = 0;
-            vivo = false;
-            mensajeFinal();
+            if (bando.equals("JUGADOR")) {
+            jugadores.remove(j);
+            cantJugadores = jugadores.size();
+            } else {
+            enemigos.remove(e);
+            cantEnemigos = enemigos.size();
+            }
         }
     }
 
-    public String mensajeInicio() {
-        return nombre + " entra en combate";
+    public boolean vivo() {
+        return vidaActual > 0;
     }
 
-    public String mensajeFinal() {
-        if (!vivo) {
-            return nombre + " ha sido derrotado";
-        } esle if (vivo && batalla.verificarFn()) {
-            return nombre + " ha ganado la batalla";
-        }
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public boolean isVivo() {
-        return this.vivo;
+    public int getVidaTotal() {
+        return this.vidaTotal;
     }
 
     public int getVidaActual() {
         return this.vidaActual;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    public int getAtaque() {
+        return this.ataque;
+    }
+
+    public String getBando() {
+        return this.bando;
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public void setVidaActual(int vida) {
+        this.vidaActual = vida;
+    }
+
+    public String status() {
+        return "Vida " + nombre + ": " + vidaActual + "/" + vidaTotal;
     }
 }
