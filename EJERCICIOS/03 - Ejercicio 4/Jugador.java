@@ -1,20 +1,33 @@
 public abstract class Jugador extends Combatiente {
     protected List<Item> inventario;
 
-    public Jugador(String nombre, int vidaTotal, int ataque) {
-        super(nombre, vidaTotal, ataque);
-        this.inventario = new ArrayList<>();
+    public Jugador(String nombre, int vidaTotal, int ataque, String tipo) {
+        super(nombre, vidaTotal, ataque, "JUGADOR", tipo); 
+        this.inventario = new ArrayList<Item>();
     }
 
-    public void usarItem(Item item, Combatiente objetivo) {
-        item.aplicarEfecto(objetivo);
-        inventario.remove(item); //para que no se usa más de una vez
+    public String mostrarMensajeInicio() {
+        return "\n" + nombre + " ha entrado en combate" + "\n";
     }
 
-    public abstract int elegirAccion();
-    public abstract Combatiente elegirObjeto(List<Combatiente> posibles);
+    public String mostrarMensajeFinal() {
+        if (this.vivo()) {
+            return "\n" + nombre + " ha ganado la batalla" + "\n";
+        } else {
+            return "\n" + nombre + " ha perdido la batalla" + "\n";
+        }
+    }
+
+    public void usarItem(int i, Enemigo enemigo, Jugador jugador, List<Enemigo> enemigos, List<Jugador> jugadores, int e, int j, int cantEnemigos, int cantJugadores) {
+        inventario.get(i).aplicarEfecto(enemigo, jugador, enemigos, jugadores, e, j, cantEnemigos, cantJugadores);
+    }
 
     public List<Item> getInventario() {
         return this.inventario;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " [Vida total: " + vidaTotal + ", tipo: " + tipo + ", ataque: " + ataque + ", items: " + inventario + " ]";
     }
 }
