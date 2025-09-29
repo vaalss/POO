@@ -10,14 +10,14 @@ public abstract class Jugador extends Combatiente {
     }
 
     public String mostrarMensajeInicio() { //mensaje cuando un jugador ataca
-        return "\n" + nombre + " ha entrado en combate" + "\n";
+        return "\n" + nombre + " ha entrado en combate 🔫" + "\n";
     }
 
     public String mostrarMensajeFinal() {
         if (this.vivo()) { //mensaje cuando se acaba la batalla
-            return "\n" + nombre + " ha ganado la batalla" + "\n";
+            return "\n" + nombre + " ha ganado la batalla ⭐" + "\n";
         } else {
-            return "\n" + nombre + " ha perdido la batalla" + "\n";
+            return "\n" + nombre + " ha perdido la batalla 👎" + "\n";
         }
     }
 

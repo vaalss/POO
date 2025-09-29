@@ -10,7 +10,7 @@ public class Consola {
 
     public void bienvenida(int e, int j) { //mensaje de bienvenida con las reglas del juego y la cantidad de combatientes por bando
         println("");
-        println("--- COMBATE MORTAL ---");
+        println("--- 💣 COMBATE MORTAL 💣 ---");
         println("REGLAS:");
         println("       - Los turnos se alternan entre jugadores y enemigos, y entre los integrantes de cada bando");
         println("       - En cada turno decides si atacas, pasas el turno o usas tu habilidad/item");
@@ -22,7 +22,7 @@ public class Consola {
 
     public void menuSeleccionG(List<Jugador> jugadoresG) { //método que muestra los posibles jugadores guerreros para escoger
         println("");
-        println("--- Jugadores Guerreros: ---");
+        println("--- 🪖 Jugadores Guerreros: 🪖 ---");
         int contadorJ = 1;
         for (Jugador j : jugadoresG) {
             println(contadorJ + ". " + j);
@@ -34,7 +34,7 @@ public class Consola {
     public void menuSeleccionE(List<Jugador> jugadoresE) { //método que muestra los posibles jugadores exploradores para escoger
         println("");
         int contadorJ = 1;
-        println("--- Jugadores Exploradores: ---");
+        println("--- 🔍 Jugadores Exploradores: 🔍 ---");
         for (Jugador j : jugadoresE) {
             println(contadorJ + ". " + j);
             contadorJ++;
@@ -46,14 +46,14 @@ public class Consola {
         println("");
         println("--- COMBATIENTES ---");
         println("");
-        println("--- Jugadores: ---");
+        println("--- 🔍 Jugadores: 🪖 ---");
         println("");
         int contadorJ = 1;
         for (Jugador j : jugadores) {
             println (contadorJ + ". " + j);
         }
         println("");
-        println("--- Enemigos: ---");
+        println("--- 🦹 Enemigos: 🦹 ---");
         println("");
         int contadorE = 1;
         for (Enemigo e : enemigos) {
@@ -67,9 +67,9 @@ public class Consola {
             println("Turno: Jugadores ⬅️ - Enemigos");
             println("");
             println("ACCIONES:");
-            println("         - Atacar");
-            println("         - Pasar el turno");
-            println("         - Usar item");
+            println("         -💥 Atacar");
+            println("         -➡️ Pasar el turno");
+            println("         -⭐ Usar item");
             println("         - Salir ");
             println("");
         } else {
@@ -77,9 +77,9 @@ public class Consola {
             println("Turno: Jugadores - Enemigos ⬅️");
             println("");
             println("ACCIONES:");
-            println("         - Atacar");
-            println("         - Pasar el turno");
-            println("         - Usar habilidad");
+            println("         -💥 Atacar");
+            println("         -➡️ Pasar el turno");
+            println("         -⭐ Usar habilidad");
             println("         - Salir");
             println("");
 
@@ -89,11 +89,11 @@ public class Consola {
     public void mostrarStatus(List<Jugador> jugadores, List<Enemigo> enemigos) { //muestra el estado de cada uno de los combatientes de la batalla
         println("");
         println("Status de los combatientes: ");
-        println("- Jugadores:");
+        println("- 🪖🔍Jugadores:");
         for (Jugador j : jugadores) {
             println("  - " + j.status());
         }
-        println("- Enemigos:");
+        println("- 🦹Enemigos:");
         for (Enemigo e : enemigos) {
             println("  - " + e.status());
         }
