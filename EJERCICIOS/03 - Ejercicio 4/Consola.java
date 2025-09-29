@@ -8,7 +8,7 @@ public class Consola {
         this.sc = new Scanner(System.in);
     }
 
-    public void bienvenida(int e, int j) {
+    public void bienvenida(int e, int j) { //mensaje de bienvenida con las reglas del juego y la cantidad de combatientes por bando
         println("");
         println("--- COMBATE MORTAL ---");
         println("REGLAS:");
@@ -20,7 +20,7 @@ public class Consola {
         println("La batalla tendrá " + e + " enemigos y " + j + " jugadores");
     }
 
-    public void menuSeleccionG(List<Jugador> jugadoresG) { //método para seleccionar los jugadores guerreros
+    public void menuSeleccionG(List<Jugador> jugadoresG) { //método que muestra los posibles jugadores guerreros para escoger
         println("");
         println("--- Jugadores Guerreros: ---");
         int contadorJ = 1;
@@ -31,7 +31,7 @@ public class Consola {
         println("");
     }
 
-    public void menuSeleccionE(List<Jugador> jugadoresE) { //método para seleccionar los jugadores exploradores
+    public void menuSeleccionE(List<Jugador> jugadoresE) { //método que muestra los posibles jugadores exploradores para escoger
         println("");
         int contadorJ = 1;
         println("--- Jugadores Exploradores: ---");
@@ -42,7 +42,7 @@ public class Consola {
         println("");
     }
 
-    public void mostrarCombatientes(List<Jugador> jugadores, List<Enemigo> enemigos) {
+    public void mostrarCombatientes(List<Jugador> jugadores, List<Enemigo> enemigos) { //muestra todos los combatientes de la batalla
         println("");
         println("--- COMBATIENTES ---");
         println("");
@@ -61,7 +61,7 @@ public class Consola {
         }
     }
 
-    public void menuAcciones(int turno) {
+    public void menuAcciones(int turno) { //muestra las posibles acciones a tomar según el tipo de combatiente
         if (turno%2 == 0) {
             println("");
             println("Turno: Jugadores ⬅️ - Enemigos");
@@ -86,7 +86,7 @@ public class Consola {
         }
     }
 
-    public void mostrarStatus(List<Jugador> jugadores, List<Enemigo> enemigos) {
+    public void mostrarStatus(List<Jugador> jugadores, List<Enemigo> enemigos) { //muestra el estado de cada uno de los combatientes de la batalla
         println("");
         println("Status de los combatientes: ");
         println("- Jugadores:");
@@ -99,7 +99,7 @@ public class Consola {
         }
     }
 
-    public void mostrarItems(Jugador j) {
+    public void mostrarItems(Jugador j) { //muestra todos los items del inventario de un jugador
         println("");
         println("Items: ");
         int contadorI = 1;
@@ -109,7 +109,7 @@ public class Consola {
         }
     }
     
-    public void mostrarHabilidades(Enemigo e){
+    public void mostrarHabilidades(Enemigo e){ //muestra todas las habilidades de un enemigo
         println("");
         println("Habilidades especiales: ");
         int contadorH = 1;
@@ -119,14 +119,14 @@ public class Consola {
         }
     }
 
-    public void mostrarAcciones(List<String> acciones) {
+    public void mostrarAcciones(List<String> acciones) { //muestra las últimas 3 acciones realizadas
         println("");
         println("Últimas acciones: ");
-        if (acciones.size() > 3) {
+        if (acciones.size() > 3) { //si la lista tiene más de 3 elementos se resta 3 al tamaño para acceder al índide de los ultimos tres elementos
             for (int i = acciones.size() - 3; i < acciones.size(); i++) {
                 println("   - " + acciones.get(i));
             }
-        } else {
+        } else { //si la lista tiene menos de 3 elementos, se imprimen todos
             for (int j = 0; j < acciones.size(); j++) {
                 println("   - " + acciones.get(j));
             }
@@ -134,19 +134,19 @@ public class Consola {
         println("");
     }
 
-    public int pedirNumero(String prompt) {
+    public int pedirNumero(String prompt) { //recibe un número del usuario
         print(prompt);
         int num = this.sc.nextInt();
         this.sc.nextLine();
         return num;
     }
 
-    public String pedirEntrada(String prompt) {
+    public String pedirEntrada(String prompt) { //recibe un String del usuario
         print(prompt);
         return this.sc.nextLine();
     } 
 
-    public void mostrarMensaje(String promt) {
+    public void mostrarMensaje(String promt) { //muestra un mensaje al usuario
         print(promt);
     }
 
