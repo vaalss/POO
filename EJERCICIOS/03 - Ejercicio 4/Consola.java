@@ -99,6 +99,26 @@ public class Consola {
         }
     }
 
+    public void mostrarItems(Jugador j) {
+        println("");
+        println("Items: ");
+        int contadorI = 1;
+        for (Item i : j.getInventario()) {
+            println(contadorI + ". " + i);
+            contadorI ++;
+        }
+    }
+    
+    public void mostrarHabilidades(Enemigo e){
+        println("");
+        println("Habilidades especiales: ");
+        int contadorH = 1;
+        for (Habilidad h : e.getHabilidades()) {
+            println(contadorH + ". " + h);
+            contadorH ++;
+        }
+    }
+
     public void mostrarAcciones() {
         println("");
         println("Últimas acciones: ");
