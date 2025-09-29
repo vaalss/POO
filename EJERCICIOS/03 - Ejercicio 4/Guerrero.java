@@ -1,6 +1,6 @@
-public class Guerrero extends Jugador {
-    
-    public Guerrero(String nombre, int vidaTotal, int ataque) {
-        super(nombre, vidaTotal, ataque);
+public class Guerrero extends Jugador { //mas vida y ataque, menos items (2)
+    public Guerrero (String nombre, int vidaTotal, int ataque) {
+        super(nombre, vidaTotal, ataque, "Guerrero");
     }
+
 }
