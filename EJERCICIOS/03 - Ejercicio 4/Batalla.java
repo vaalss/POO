@@ -148,6 +148,7 @@ public class Batalla {
                             acciones.add(enemigoTurno.getNombre() + " ha atacado a " + objetivo_A_E.getNombre());
                         } else { //si el enemigo mató al jugador
                             acciones.add(enemigoTurno.getNombre() + " ha matado a " + objetivo_A_E.getNombre());
+                            vista.mostrarMensaje(objetivo_A_E.mostrarMensajeFinal()); //si el jugador muere muestra su mensaje final
                         }
                     }
                     turno++; //se suma para pasar al siguiente turno
@@ -189,6 +190,7 @@ public class Batalla {
                         acciones.add(enemigoTurno.getNombre() + " ha utilizado una habilidad especial sobre " + objetivo_H_E.getNombre());
                     } else {
                         acciones.add(enemigoTurno.getNombre() + " ha utilizado una habilidad especial sobre " + objetivo_H_E.getNombre() + " y lo ha matado");
+                        vista.mostrarMensaje(objetivo_H_E.mostrarMensajeFinal()); //si el jugador muere muestra su mensaje final
                     }
                     turno++;
                     vista.mostrarStatus(jugadores, enemigos);
@@ -240,8 +242,12 @@ public class Batalla {
         if (!jVivos && eVivos) {
             vista.mostrarMensaje("¡Han ganado los enemigos!");
         } else if (jVivos && !eVivos) {
+            for (Jugador j : jugadores) { //los jugadores que no han muerto muestran su mensaje de final
+                vista.mostrarMensaje(j.mostrarMensajeFinal());
+            }
             vista.mostrarMensaje("¡Han ganado los jugadores!");
         } else {
             vista.mostrarMensaje("¡La batalla ha finalizado en empate!");
         }
     }
+}
