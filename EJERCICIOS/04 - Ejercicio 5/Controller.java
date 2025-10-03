@@ -10,7 +10,16 @@ public class Controller {
     }
 
     public void registrarProcesos() {
-        //instanciar los procesos
+        Process p1 = new CPU("Memoria Restante"); procesos.add(p1);
+        Process p2 = new IO("Mostrar fecha"); procesos.add(p2);
+        Process p3 = new Daemons("Monitoreo"); procesos.add(p3);
+        Process p4 = new CPU("Dividir"); procesos.add(p4);
+        Process p5 = new Daemons("Hora actual"); procesos.add(p5);
+        Process p6 = new IO("Pedir nombre"); procesos.add(p6);
+        Process p7 = new IO("Pedir edad"); procesos.add(p7);
+        Process p8 = new CPU("Suma"); procesos.add(p8);
+        Process p9 = new CPU("Multiplicar"); procesos.add(p9);
+        Process p10 = new Daemons("Apagar sistema"); procesos.add(p10);
     }
 
     public void correr () {
