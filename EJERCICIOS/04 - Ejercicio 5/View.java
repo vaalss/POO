@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class View {
@@ -8,7 +10,7 @@ public class View {
     }
 
     public void mostrarMenu() {
-        print("--- MENU ---");
+        println("--- MENU ---");
         println("   1. Correr procesos");
         println("   2. Salir");
     }
@@ -27,10 +29,10 @@ public class View {
     }
 
     public void mostrarProcesos(ArrayList<Process> procesos) {
-        println("--- Procesos --- \n")
+        println("--- Procesos --- \n");
         for (Process p : procesos) {
-            println(p);
-            println(p.ejecutar());
+            System.out.println(p);
+            System.out.println(p.ejecutar());
         }
     }
 

@@ -8,7 +8,7 @@ public abstract class Process {
     this.PID = contador++;
     }
 
-    public abstract String ejecutar(); //agregar firma
+    public abstract String ejecutar();
 
     public int getPID() {
         return this.PID;
@@ -17,4 +17,6 @@ public abstract class Process {
     public String getNombre() {
         return this.nombre;
     }
+
+    public abstract String toString();
 }

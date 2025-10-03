@@ -22,12 +22,12 @@ public class IO extends Process {
                 int edad = consola.pedirNumero("Ingresa tu edad: ");
                 return "Tienes " + edad + " año(s)";
             default:
-                return "No se reconoce el proceso"
+                return "No se reconoce el proceso";
         }   
     }
 
     @Override 
     public String toString() {
-        return "Proceso de I/O: " + this.getPID() + " '" + this.getNombre + "'";
+        return "Proceso de I/O: " + this.getPID() + " '" + this.getNombre() + "'";
     }
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Controller {
     private ArrayList<Process> procesos;
     private View consola;
@@ -16,7 +18,7 @@ public class Controller {
         while (salir == 0){
             this.registrarProcesos();
             consola.mostrarMenu();
-            int opcion = consola.pedirNumero();
+            int opcion = consola.pedirNumero("Selecciona una opción: ");
             switch (opcion) {
                 case 1:
                     consola.mostrarProcesos(procesos);

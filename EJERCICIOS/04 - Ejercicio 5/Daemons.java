@@ -31,7 +31,7 @@ public class Daemons extends Process {
                     return "La hora actual es " + hora;
                 case "Apagar sistema":
                     this.activo = false;
-                    return "Apagando el sistema..."
+                    return "Apagando el sistema...";
                 default:
                     return "No se reconoce el proceso";
             }
@@ -39,6 +39,6 @@ public class Daemons extends Process {
 
     @Override 
      public String toString() {
-        return "Proceso de Daemons: " + this.getPID() + " '" + this.getNombre + "'";
+        return "Proceso de Daemons: " + this.getPID() + " '" + this.getNombre() + "'";
     }
 }
