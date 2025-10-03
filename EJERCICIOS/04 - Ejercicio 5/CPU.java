@@ -33,18 +33,16 @@ public class CPU extends Process {
                 return a + " x " + b + " = " + resultado;
             }
             case "Dividir": {
-                if (a > 0) {
+                if (a != 0) {
                     int resultado = b / a;
                     return b + " / " + a + " = " + resultado;
+                } else if (b != 0) {
+                    int resultado = a / b;
+                    return a + " / " + b + " = " + resultado;
                 } else {
-                    if (b > 0) {
-                        int resultado = a / b;
-                        return a + " / " + b + " = " + resultado;
-                    } else {
-                        return "No se puede realizar la división";
-                    }
-                } 
-            }
+                    return "No se puede realizar la división";
+                }
+            } 
             case "Memoria Restante":
                 return "Tienes " + rand.nextInt(1, 368) + " bytes restantes de memoria";
             default:
@@ -55,6 +53,6 @@ public class CPU extends Process {
 
     @Override 
     public String toString() {
-        return "Proceso de CPU: " + this.getPID() + " '" + this.getNombre() + "'";
+        return "Proceso de CPU " + this.getPID() + ": '" + this.getNombre() + "'";
     }
 }

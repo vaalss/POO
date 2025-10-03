@@ -28,6 +28,6 @@ public class IO extends Process {
 
     @Override 
     public String toString() {
-        return "Proceso de I/O: " + this.getPID() + " '" + this.getNombre() + "'";
+        return "Proceso de I/O " + this.getPID() + ": '" + this.getNombre() + "'";
     }
 }

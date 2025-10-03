@@ -12,15 +12,11 @@ public class Daemons extends Process {
             String tipo = this.getNombre();
             switch (tipo) {
                 case "Monitoreo":
-                    while (activo) {
-                        try {
-                            System.out.println("Proceso Daemon activo, monitoreando procesos...");
-                            Thread.sleep(5000); // espera 5 segundos
-                        } catch (InterruptedException e) {
-                            return e.getMessage();
-                        }
+                    if (activo) {
+                        return "Proceso Daemon activo, monitoreando procesos...";
+                    } else {
+                        return "Monitoreo detenido.";
                     }
-                    return "Monitoreo detenido.";
                 case "Hora Actual":
                     LocalTime hora = LocalTime.now();
                     try {
@@ -39,6 +35,6 @@ public class Daemons extends Process {
 
     @Override 
      public String toString() {
-        return "Proceso de Daemons: " + this.getPID() + " '" + this.getNombre() + "'";
+        return "Proceso de Daemons " + this.getPID() + ": '" + this.getNombre() + "'";
     }
 }

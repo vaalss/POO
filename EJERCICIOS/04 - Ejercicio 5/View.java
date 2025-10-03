@@ -10,7 +10,7 @@ public class View {
     }
 
     public void mostrarMenu() {
-        println("--- MENU ---");
+        println("\n--- MENU ---");
         println("   1. Correr procesos");
         println("   2. Salir");
     }
@@ -31,7 +31,7 @@ public class View {
     public void mostrarProcesos(ArrayList<Process> procesos) {
         println("--- Procesos --- \n");
         for (Process p : procesos) {
-            System.out.println(p);
+            System.out.print("- " + p + ": ");
             System.out.println(p.ejecutar());
         }
     }

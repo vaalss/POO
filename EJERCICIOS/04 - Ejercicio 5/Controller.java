@@ -23,16 +23,18 @@ public class Controller {
     }
 
     public void correr () {
+        this.registrarProcesos();
         int salir = 0;
         while (salir == 0){
-            this.registrarProcesos();
             consola.mostrarMenu();
             int opcion = consola.pedirNumero("Selecciona una opción: ");
             switch (opcion) {
                 case 1:
                     consola.mostrarProcesos(procesos);
+                    break;
                 case 2:
                     salir = 1;
+                    break;
             }
         }
     }
