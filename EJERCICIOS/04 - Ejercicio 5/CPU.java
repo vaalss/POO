@@ -1,0 +1,56 @@
+import java.util.Random;
+
+public class CPU extends Process {
+    private int a;
+    private int b;
+    private Random rand;
+
+    public CPU(String nombre) {
+        this.nombre = nombre;
+        this.rand = new Random();
+        this.a = rand.nextInt(1, 1000);
+        this.b = rand.nextInt(1, 1000);
+    }
+
+    public String ejecutar() {
+        String tipo = this.getNombre();
+        switch (tipo) {
+            case "Suma": {
+                int resultado = a + b;
+                return a + " + " + b + " = " + resultado;
+            }
+            case "Resta": {
+                if (a > b) {
+                    int resultado = a - b;
+                    return a + " - " + b + " = " + resultado;
+                } else {
+                    int resultado = b - a;
+                    return b + " - " + a + " = " + resultado;
+                } 
+            }
+            case "Multiplicar": {
+                int resultado = a * b;
+                return a + " x " + b + " = " + resultado;
+            }
+            case "Dividir": {
+                if (a > 0) {
+                    int resultado b / a;
+                    return b + " / " + a + " = " + resultado;
+                } else {
+                    if (b > 0) {
+                        int resultado a / b;
+                        return a + " / " + b + " = " + resultado;
+                    } else {
+                        return "No se puede realizar la división"
+                    }
+                } 
+            }
+        }
+    }
+
+
+    @Override 
+    public String toString() {
+        return "Realizando proceso de CPU..." + "\n Número de proceso: " this.getPID() + " '" + this.getNombre + "'";
+    }
+}
