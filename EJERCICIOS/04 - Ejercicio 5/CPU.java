@@ -45,6 +45,10 @@ public class CPU extends Process {
                     }
                 } 
             }
+            case "Memoria Restante":
+                return "Tienes " + rand.nextInt(1, 368) + " bytes restantes de memoria";
+            default:
+                return "No se reconoce el proceso";
         }
     }
 

@@ -15,13 +15,14 @@ public class IO extends Process {
         switch (tipo) {
             case "Mostrar fecha":
                 return "Hoy es " + this.fecha;
-                break;
             case "Pedir nombre":
                 String nombre = consola.pedirEntrada("Ingresa tu nombre: ");
                 return "Tu nombre es " + nombre;
             case "Pedir edad":
                 int edad = consola.pedirNumero("Ingresa tu edad: ");
                 return "Tienes " + edad + " año(s)";
+            default:
+                return "No se reconoce el proceso"
         }   
     }
 
