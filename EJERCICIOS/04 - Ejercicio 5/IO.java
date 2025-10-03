@@ -14,16 +14,15 @@ public class IO extends Process {
         String tipo = this.getNombre();
         switch (tipo) {
             case "Mostrar fecha":
-                consola.mostrarMensaje("Hoy es " + this.fecha);
+                return "Hoy es " + this.fecha;
                 break;
             case "Pedir nombre":
                 String nombre = consola.pedirEntrada("Ingresa tu nombre: ");
-                consola.mostrarMensaje("Tu nombre es " + nombre);
+                return "Tu nombre es " + nombre;
             case "Pedir edad":
                 int edad = consola.pedirNumero("Ingresa tu edad: ");
-                consola.mostrarMensaje("Tienes " + edad + " año(s)");
+                return "Tienes " + edad + " año(s)";
         }   
-
     }
 
     @Override 
