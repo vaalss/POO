@@ -55,6 +55,6 @@ public class CPU extends Process {
 
     @Override 
     public String toString() {
-        return "Realizando proceso de CPU..." + "\n Número de proceso: " this.getPID() + " '" + this.getNombre + "'";
+        return "Proceso de CPU: " + this.getPID() + " '" + this.getNombre + "'";
     }
 }

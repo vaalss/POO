@@ -1,4 +1,4 @@
-import java.util.LocalDate;
+import java.time.LocalDate;
 
 public class IO extends Process {
     private View consola;
@@ -28,6 +28,6 @@ public class IO extends Process {
 
     @Override 
     public String toString() {
-        return "Realizando proceso de I/O..." + "\n Número de proceso: " this.getPID() + " '" + this.getNombre + "'";
+        return "Proceso de I/O: " + this.getPID() + " '" + this.getNombre + "'";
     }
 }
