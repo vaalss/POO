@@ -5,7 +5,7 @@ public class IO extends Process {
     private LocalDate fecha;
 
     public IO(String nombre) {
-        super(String nombre);
+        super(nombre);
         this.consola = new View();
         this.fecha = LocalDate.now();
     }

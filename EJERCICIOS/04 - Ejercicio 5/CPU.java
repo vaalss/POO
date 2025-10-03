@@ -6,7 +6,7 @@ public class CPU extends Process {
     private Random rand;
 
     public CPU(String nombre) {
-        this.nombre = nombre;
+        super(nombre)        
         this.rand = new Random();
         this.a = rand.nextInt(1, 1000);
         this.b = rand.nextInt(1, 1000);
