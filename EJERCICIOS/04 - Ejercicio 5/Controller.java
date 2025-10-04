@@ -1,3 +1,9 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Sección 40
+//Valeria Hernández Maldonado 25086
+
+//controlador
+
 import java.util.ArrayList;
 
 public class Controller {
@@ -9,7 +15,7 @@ public class Controller {
         this.consola = new View();
     }
 
-    public void registrarProcesos() {
+    public void registrarProcesos() { //se instancias algunos procesos para simular el sistema
         Process p1 = new CPU("Memoria Restante"); procesos.add(p1);
         Process p2 = new IO("Mostrar fecha"); procesos.add(p2);
         Process p3 = new Daemons("Monitoreo"); procesos.add(p3);
@@ -26,14 +32,14 @@ public class Controller {
         this.registrarProcesos();
         int salir = 0;
         while (salir == 0){
-            consola.mostrarMenu();
+            consola.mostrarMenu(); //el usuario escoge entre salir y correr los procesos
             int opcion = consola.pedirNumero("Selecciona una opción: ");
             switch (opcion) {
                 case 1:
                     consola.mostrarProcesos(procesos);
                     break;
                 case 2:
-                    salir = 1;
+                    salir = 1; //se termina el ciclo hasta que el usuario lo pida
                     break;
             }
         }

@@ -1,7 +1,13 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Sección 40
+//Valeria Hernández Maldonado 25086
+
+//clase "padre"
+
 public abstract class Process {
     protected int PID;
     protected String nombre;
-    protected static int contador = 0;
+    protected static int contador = 0; //contador compartido entre todas las instancias 
 
     public Process(String nombre){
     this.nombre = nombre;

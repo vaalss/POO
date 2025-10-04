@@ -1,19 +1,25 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Sección 40
+//Valeria Hernández Maldonado 25086
+
+//Modelo
+
 import java.util.Random;
 
-public class CPU extends Process {
+public class CPU extends Process { //hereda de proceso
     private int a;
     private int b;
     private Random rand;
 
     public CPU(String nombre) {
-        super(nombre);   
+        super(nombre); //llama al constructor de la clase "padre"
         this.rand = new Random();
-        this.a = rand.nextInt(1, 1000);
+        this.a = rand.nextInt(1, 1000); //genera número aleatorios entre 1 y 1000
         this.b = rand.nextInt(1, 1000);
     }
 
     public String ejecutar() {
-        String tipo = this.getNombre();
+        String tipo = this.getNombre(); //nombre = tipo de acción que realiza
         switch (tipo) {
             case "Suma": {
                 int resultado = a + b;
@@ -43,7 +49,7 @@ public class CPU extends Process {
                     return "No se puede realizar la división";
                 }
             } 
-            case "Memoria Restante":
+            case "Memoria Restante": //Genera un número aleatorio para simular la memoria restante
                 return "Tienes " + rand.nextInt(1, 368) + " bytes restantes de memoria";
             default:
                 return "No se reconoce el proceso";
