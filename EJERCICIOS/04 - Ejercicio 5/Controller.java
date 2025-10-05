@@ -22,10 +22,12 @@ public class Controller {
         Process p4 = new CPU("Dividir"); procesos.add(p4);
         Process p5 = new Daemons("Hora actual"); procesos.add(p5);
         Process p6 = new IO("Pedir nombre"); procesos.add(p6);
-        Process p7 = new IO("Pedir edad"); procesos.add(p7);
-        Process p8 = new CPU("Suma"); procesos.add(p8);
-        Process p9 = new CPU("Multiplicar"); procesos.add(p9);
-        Process p10 = new Daemons("Apagar sistema"); procesos.add(p10);
+        Process p7 = new CPU("Multiplicar"); procesos.add(p7);
+        Process p8 = new IO("Pedir edad"); procesos.add(p8);
+        Process p9 = new CPU("Suma"); procesos.add(p9);
+        Process p10 = new CPU("Multiplicar"); procesos.add(p10);
+        Process p11 = new Daemons("Apagar sistema"); procesos.add(p11);
+        Process p12 = new Daemons("Monitoreo"); procesos.add(p12);
     }
 
     public void correr () {
