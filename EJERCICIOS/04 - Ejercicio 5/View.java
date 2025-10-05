@@ -34,14 +34,19 @@ public class View {
     }
 
     public void mostrarMensaje(String mensaje) { //método para mostrar un mensaje en consola
-        pritnln(mensaje);
+        println(mensaje);
     }
 
     public void mostrarProcesos(ArrayList<Process> procesos) { //método que muestra todos los procesos de la lista de procesos
         println("--- Procesos --- \n");
         for (Process p : procesos) {
-            System.out.print("- " + p + ": ");
-            System.out.println(p.ejecutar());
+            try {
+                System.out.print("- " + p + ": ");
+                System.out.println(p.ejecutar());
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();;
+            }
         }
     }
 
