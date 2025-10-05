@@ -7,7 +7,7 @@
 import java.time.LocalTime;
 
 public class Daemons extends Process { //hereda de proceso
-    private boolean activo;
+    private static boolean activo; //estado de activación compartido por todas las instancias
 
     public Daemons(String nombre) {
         super(nombre); //llama al constructor de la clase "padre"
