@@ -20,7 +20,7 @@ public class Controller {
         Process p2 = new IO("Mostrar fecha"); procesos.add(p2);
         Process p3 = new Daemons("Monitoreo"); procesos.add(p3);
         Process p4 = new CPU("Dividir"); procesos.add(p4);
-        Process p5 = new Daemons("Hora actual"); procesos.add(p5);
+        Process p5 = new Daemons("Hora Actual"); procesos.add(p5);
         Process p6 = new IO("Pedir nombre"); procesos.add(p6);
         Process p7 = new CPU("Multiplicar"); procesos.add(p7);
         Process p8 = new IO("Pedir edad"); procesos.add(p8);
