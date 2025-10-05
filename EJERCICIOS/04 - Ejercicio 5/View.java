@@ -33,6 +33,10 @@ public class View {
         return entrada;
     }
 
+    public void mostrarMensaje(String mensaje) { //método para mostrar un mensaje en consola
+        pritnln(mensaje);
+    }
+
     public void mostrarProcesos(ArrayList<Process> procesos) { //método que muestra todos los procesos de la lista de procesos
         println("--- Procesos --- \n");
         for (Process p : procesos) {
