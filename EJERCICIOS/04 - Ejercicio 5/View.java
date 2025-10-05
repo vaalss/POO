@@ -45,7 +45,7 @@ public class View {
                 System.out.println(p.ejecutar());
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();;
+                e.printStackTrace();
             }
         }
     }
