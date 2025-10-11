@@ -26,12 +26,52 @@ public abstract class Medico {
     public abstract String toString();
 
     public String calcularEficiencia() {
-        if (horasTrabajadas =! 0) {
-            double eficiencia = this.atendidos / this.horasTrabajadas;
+        if (horasTrabajadas != 0) {
+            int eficiencia = (double)this.atendidos / this.horasTrabajadas;
             double redondeado = Double.parseDouble(String.format("%.2f", eficiencia));
             return this.nombre + " - eficiencia del: " + redondeado + "%";
         } else {
-            return this.nomre " no ha trabajado"
+            return this.nombre " no ha trabajado"
         }
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public int getExperiencia() {
+        return this.experiencia;
+    }
+
+    public double getSalarioBase() {
+        return this.salarioBase;
+    }
+
+    public boolean getDisponibilidad() {
+        return this.disponible;
+    }
+
+    public int getHorasTrabajadas() {
+        return this.horasTrabajadas;
+    }
+
+    public int getAtendidos() {
+        return this.atendidos;
+    }
+
+    public void setDisponible (boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public void setHorasTrabajadas(int horas) {
+        this.horasTrabajadas += horas
+    }
+
+    public void setAtendidos() {
+        this.atendidos ++;
     }
 }
