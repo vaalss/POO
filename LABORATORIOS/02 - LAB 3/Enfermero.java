@@ -23,7 +23,7 @@ public class Enfermero extends Medico {
     }
 
     public boolean bonificacionActiva() {
-        if (this.tirno.equals("NOCHE")) {
+        if (this.turno.equals("NOCHE")) {
             return true;
         } else {
             return false;
