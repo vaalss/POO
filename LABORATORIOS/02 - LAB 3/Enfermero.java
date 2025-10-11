@@ -18,7 +18,7 @@ public class Enfermero extends Medico {
         return this.nivel;
     }
 
-    public double gerBonificacion() {
+    public double getBonificacion() {
         return this.bonificacion;
     }
 
