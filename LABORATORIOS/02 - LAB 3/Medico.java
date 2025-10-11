@@ -18,5 +18,20 @@ public abstract class Medico {
         this.atendidos = 0;
     }
 
+    public abstract void recibirCita();
     
+    public abstract double calcularSalario();
+
+    @Override 
+    public abstract String toString();
+
+    public String calcularEficiencia() {
+        if (horasTrabajadas =! 0) {
+            double eficiencia = this.atendidos / this.horasTrabajadas;
+            double redondeado = Double.parseDouble(String.format("%.2f", eficiencia));
+            return this.nombre + " - eficiencia del: " + redondeado + "%";
+        } else {
+            return this.nomre " no ha trabajado"
+        }
+    }
 }
