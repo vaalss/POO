@@ -8,11 +8,11 @@ public class Farmaceutico extends Medico {
         this.licencia = licencia;
     }
 
-    public getPrescripciones() {
+    public int getPrescripciones() {
         return this.prescripciones;
     }
 
-    public getLicencia() {
+    public boolean getLicencia() {
         return this.licencia;
     }
 }
