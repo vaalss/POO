@@ -30,15 +30,18 @@ public class Enfermero extends Medico {
         }
     }
 
-    public void recibirCita() {
+    public void recibirCita(Cita c) {
         this.atendidos++;
+        int horas = c.getHoraFinal() - c.getHoraInicio();
+        this.horasTrabajadas += horas;
     }
 
     public double calcularSalario() {
+        double salario = 0;
         if (this.turno.equals("NOCHE")) {
-            double salario = this.salarioBase + this.bonificacion;
+            salario = this.salarioBase + this.bonificacion;
         } else {
-            double salario = this.salarioBase;
+            salario = this.salarioBase;
         }
         return salario;
     }

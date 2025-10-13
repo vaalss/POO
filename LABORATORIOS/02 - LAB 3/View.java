@@ -9,6 +9,7 @@ public class View {
     }
 
     public void mostrarMenu() {
+        println("");
         println("--- MENÚ DE OPCIONES ---");
         println("1. Cancelar Cita");
         println("2. Ver medicos disponibles");
@@ -18,13 +19,15 @@ public class View {
         println("6. Ver reportes de nómina");
         println("7. Ver análisis financiero");
         println("8. Ver historial de cambios");
+        println("9. Salir");
+        println("");
     }
 
     public void mostrarMensaje(String m) {
         println(m);
     }
 
-    public int pedirEntrada(String promt) {
+    public int pedirEntrada(String prompt) {
         print(prompt);
         int entrada = sc.nextInt();
         sc.nextLine();
@@ -32,22 +35,23 @@ public class View {
     }
 
     public void mostrarHistorial(ArrayList<String> historial) {
-        println("Registro de cambios: ");
+        println("--- Registro de cambios -");
         for (String h : historial) {
             println(" - " + h);
         }
     }
 
     public void mostrarPersonal(ArrayList<Medico> trabajadores) {
-        println("Reporte de Personal: ");
+        println("--- Reporte de Personal ---");
         for (Medico m : trabajadores) {
             println(" - " + m);
+            println("");
         }
     }
 
     public void mostrarEficiencia(ArrayList<Medico> trabajadores) {
-        println("Reporte de eficiencia: ");
-        for (Medic0 m : trabajadores) {
+        println("--- Reporte de eficiencia ---");
+        for (Medico m : trabajadores) {
             println(" - " + m.getNombre() + ": " + m.calcularEficiencia());
         }
     }
@@ -64,21 +68,21 @@ public class View {
 
     }
 
-    public void citasEstado(ArrayList<Cita> citas, String estado, String título ){
+    public void citasEstado(ArrayList<Cita> citas, String estado, String titulo ){
         println("- " + titulo + ": ");
         boolean hayCitas = false;
         for (Cita c : citas) {
-            if (c.getEstado.equals(estado)) {
+            if (c.getEstado().equals(estado)) {
                 println(" - " + c);
                 hayCitas = true;
             }
         }
         if (!hayCitas) {
-            println("No hay citas " + c.getEstado());
+            println("No hay citas " + estado);
         }
     }
 
-    public citasMedico(ArrayList<Cita> citas, ArrayList<Medico> trabajadores) {
+    public void citasMedico(ArrayList<Cita> citas, ArrayList<Medico> trabajadores) {
         boolean hayCitas = false;
         for (Medico m : trabajadores) {
             println("- Citas de " + m.getNombre() + ": ");

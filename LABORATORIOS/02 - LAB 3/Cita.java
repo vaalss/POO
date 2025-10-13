@@ -1,15 +1,16 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Cita {
     private int ID;
-    private static int contador;
+    private static int contador = 1;
     private String nombre;
     private Medico trabajador;
     private String fecha;
     private int horaInicio;
     private int horaFinal;
     private String tipo;
-    private String decripcion;
+    private String descripcion;
     private String estado;
     
     public Cita(String nombre, String fecha, int horaInicio, int horaFinal, String tipo, String descripcion) {
@@ -20,32 +21,33 @@ public class Cita {
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
         this.tipo = tipo;
-        this.descripcion = descripcion
+        this.descripcion = descripcion;
         this.estado = "PROGRAMADA";
     }
 
+
     public void asignarMedico(ArrayList<Medico> trabajadores) { //arreglar, según departamento
         Random rand = new Random();
-        ArrayList<Medico> especialistas = new ArrayList<Medico>;
+        ArrayList<Medico> especialistas = new ArrayList<Medico>();
         if (this.tipo.toLowerCase().contains("consulta") || this.tipo.toLowerCase().contains("chequeo")) {
             for (Medico m : trabajadores) { //si quiere una cita consulta o chequeo, va con un doctor
                 if (m.getClass().getSimpleName().equals("Doctor")) {
                     especialistas.add(m);
-                    if(this.descripcion.contains(pediátra)) {
+                    if(this.descripcion.contains("pediátra")) {
                         for (Medico M : especialistas) {
-                            if(!this.departamento.contains("PEDIATRÍA")) {
+                            if(!M.departamento.contains("PEDIATRÍA")) {
                                 especialistas.remove(M);
                             }
                         }
                     } else if (this.descripcion.contains("dermatólogo")) {
                         for (Medico M : especialistas) {
-                            if(!this.departamento.contains("DERMATOLOGÍA")) {
+                            if(!M.departamento.contains("DERMATOLOGÍA")) {
                                 especialistas.remove(M);
                             }
                         }
                     } else if (this.descripcion.contains("cardiólogo")) {
                         for (Medico M : especialistas) {
-                            if(!this.departamento.contains("CARDIOLOGÍA")) {
+                            if(!M.departamento.contains("CARDIOLOGÍA")) {
                                 especialistas.remove(M);
                             }
                         }
@@ -56,21 +58,21 @@ public class Cita {
             for (Medico m : trabajadores) {
                 if (m.getClass().getSimpleName().equals("Cirujano")) {
                     especialistas.add(m);
-                    if(this.descripcion.contains(pediátra)) {
+                    if(this.descripcion.contains("pediátra")) {
                         for (Medico M : especialistas) {
-                            if(!this.departamento.contains("PEDIATRÍA")) {
+                            if(!M.departamento.contains("PEDIATRÍA")) {
                                 especialistas.remove(M);
                             }
                         }
                     } else if (this.descripcion.contains("dermatólogo")) {
                         for (Medico M : especialistas) {
-                            if(!this.departamento.contains("DERMATOLOGÍA")) {
+                            if(!M.departamento.contains("DERMATOLOGÍA")) {
                                 especialistas.remove(M);
                             }
                         }
                     } else if (this.descripcion.contains("cardiólogo")) {
                         for (Medico M : especialistas) {
-                            if(!this.departamento.contains("CARDIOLOGÍA")) {
+                            if(!M.departamento.contains("CARDIOLOGÍA")) {
                                 especialistas.remove(M);
                             }
                         }
@@ -92,15 +94,13 @@ public class Cita {
         } else { //si no tiene especificación, se va con un enfermero general
             for (Medico m : trabajadores) {
                 if (m.getClass().getSimpleName().equals("Enfermero")) {
-                    if (m.getNivel().contains("GENERAL")) {
-                        especialistas.add(m);
-                    }
-                }
+                    especialistas.add(m);
             }
         }
         int indice = rand.nextInt(especialistas.size());
         Medico trabajador = especialistas.get(indice);
         this.trabajador = trabajador;
+        }
     }
 
     public int getID() {

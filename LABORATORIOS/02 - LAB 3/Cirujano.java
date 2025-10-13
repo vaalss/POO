@@ -3,6 +3,7 @@ public class Cirujano extends Medico {
     private int horasDisponible;
     private double tarifa;
     private double bonificacion;
+    private boolean bono;
 
     public Cirujano(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String tipo, int horasDisponible, double tarifa, double bonificacion) {
         super(nombre, departamento, experiencia, salarioBase, disponible);
@@ -10,6 +11,7 @@ public class Cirujano extends Medico {
         this.horasDisponible = horasDisponible;
         this.tarifa = tarifa;
         this.bonificacion = bonificacion;
+        this.bono = false;
     }
 
     public String getTipo() {
@@ -24,7 +26,7 @@ public class Cirujano extends Medico {
         return this.tarifa;
     }
 
-    public getBonificacion() {
+    public double getBonificacion() {
         return this.bonificacion;
     }
 
@@ -35,13 +37,16 @@ public class Cirujano extends Medico {
         if (this.horasDisponible < 0) {
             this.horasDisponible = 0;
         }
+        this.horasTrabajadas += horas;
+        if(c.getDescripcion().toLowerCase().contains("riesgo")) {
+            this.bono = true;
+        }
 
     }
 
-    public double calcularSalario(Cita c) {
-        int horas = c.getHoraFinal() - c.getHoraInicio();
-        double salario = this.salarioBase + (horas * this.tarifa);
-        if(c.getDescripcion().toLowerCase().contains("riesgo")) {
+    public double calcularSalario() {
+        double salario = this.salarioBase + (this.horasTrabajadas * this.tarifa);
+        if (bono) {
             salario += this.bonificacion;
         }
         return salario;

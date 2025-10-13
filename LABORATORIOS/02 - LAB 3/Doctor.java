@@ -3,7 +3,7 @@ public class Doctor extends Medico {
     private int capacidad;
     private double tarifa;
 
-    private Doctor(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String especializacion, int capacidad, double tarifa) {
+    public Doctor(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String especializacion, int capacidad, double tarifa) {
         super(nombre, departamento, experiencia, salarioBase, disponible);
         this.especializacion = especializacion;
         this.capacidad = capacidad;
@@ -22,8 +22,10 @@ public class Doctor extends Medico {
         return this.tarifa;
     }
 
-    public void recibirCita() {
+    public void recibirCita(Cita c) {
         this.atendidos++;
+        int horas = c.getHoraFinal() - c.getHoraInicio();
+        this.horasTrabajadas += horas;
     }
 
     public double calcularSalario() {

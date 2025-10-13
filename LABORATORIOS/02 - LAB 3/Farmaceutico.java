@@ -18,8 +18,10 @@ public class Farmaceutico extends Medico {
         return this.licencia;
     }
 
-    public void recibirCita() {
+    public void recibirCita(Cita c) {
         this.atendidos ++;
+        int horas = c.getHoraFinal() - c.getHoraInicio();
+        this.horasTrabajadas += horas;
     }
 
     public double calcularSalario() {
@@ -27,7 +29,7 @@ public class Farmaceutico extends Medico {
         return salario;
     }
 
-    public void getDisponibilidad() {
+    public boolean getDisponibilidad() {
         if (this.atendidos < this.prescripciones) {
             this.disponible = true;
         } else {
