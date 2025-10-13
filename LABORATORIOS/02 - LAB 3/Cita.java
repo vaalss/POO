@@ -97,6 +97,10 @@ public class Cita {
         this.estado = estado;
     }
 
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
     @Override
     public String toString() {
         return "Cita #" + this.ID + ": \n- Paciente: " + this.nombre + "\n- Médico asignado: " + this.trabajador + "\n- Fecha: " +
