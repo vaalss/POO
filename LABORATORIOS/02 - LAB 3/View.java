@@ -10,7 +10,7 @@ public class View {
 
     public void mostrarMenu() {
         println("--- MENÚ DE OPCIONES ---");
-        println("1. Agendar Cita");
+        println("1. Cancelar Cita");
         println("2. Ver medicos disponibles");
         println("3. Ver reporte de citas");
         println("4. Ver reporte de personal");
@@ -56,7 +56,7 @@ public class View {
         println("--- Registro de citas ---");
         citasEstado(citas, "PROGRAMADA", "Citas programadas");
         citasEstado(citas, "CONFIRMADA", "Citas confirmadas");
-        citasEstado(citas, "EN_PROGRESO", "Citas en progreso");
+        citasEstado(citas, "EN PROGRESO", "Citas en progreso");
         citasEstado(citas, "COMPLETADA", "Citas completadas");
         citasEstado(citas, "CANCELADA", "Citas canceladas");
         citasEstado(citas, "REAGENDADA", "Citas reagendadas");
