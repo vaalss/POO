@@ -4,8 +4,8 @@ public class Cirujano extends Medico {
     private double tarifa;
     private double bonificacion;
 
-    public Cirujano(String nombre, int experiencia, double salarioBase, boolean disponible, String tipo, int horasDisponible, double tarifa, double bonificacion) {
-        super(nombre, experiencia, salarioBase, disponible);
+    public Cirujano(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String tipo, int horasDisponible, double tarifa, double bonificacion) {
+        super(nombre, departamento, experiencia, salarioBase, disponible);
         this.tipo = tipo;
         this.horasDisponible = horasDisponible;
         this.tarifa = tarifa;

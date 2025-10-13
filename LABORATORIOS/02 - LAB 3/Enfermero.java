@@ -3,8 +3,8 @@ public class Enfermero extends Medico {
     public String nivel;
     public double bonificacion;
 
-    public Enfermero(String nombre, int experiencia, double salarioBase, boolean disponible, String turno, String nivel, double bonificacion) {
-        super(nombre, experiencia, salarioBase, disponible);
+    public Enfermero(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String turno, String nivel, double bonificacion) {
+        super(nombre, departamento, experiencia, salarioBase, disponible);
         this.turno = turno;
         this.nivel = nivel;
         this.bonificacion = bonificacion;

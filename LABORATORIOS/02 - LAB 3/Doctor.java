@@ -3,8 +3,8 @@ public class Doctor extends Medico {
     private int capacidad;
     private double tarifa;
 
-    private Doctor(String nombre, int experiencia, double salarioBase, boolean disponible, String especializacion, int capacidad, double tarifa) {
-        super(nombre, experiencia, salarioBase, disponible);
+    private Doctor(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String especializacion, int capacidad, double tarifa) {
+        super(nombre, departamento, experiencia, salarioBase, disponible);
         this.especializacion = especializacion;
         this.capacidad = capacidad;
         this.tarifa = tarifa;
