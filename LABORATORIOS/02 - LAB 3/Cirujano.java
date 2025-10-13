@@ -55,10 +55,12 @@ public class Cirujano extends Medico {
     public boolean getDisponibilidad() {
         if (this.horasTrabajadas < this.horasDisponible) {
             this.disponible = true;
+            return this.disponible;
         } else {
             this.disponible = false;
+            return this.disponible;
         }
-        return false;
+        return this.disponible;;
     }
 
     @Override
