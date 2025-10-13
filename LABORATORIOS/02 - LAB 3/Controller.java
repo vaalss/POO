@@ -47,65 +47,65 @@ public class Controller {
         int salir = 0;
         while (salir == 0) {
             consola.mostrarMenu();
-        int opcion = consola.pedirEntrada("Selecciona la opción que deseas realizar: ");
-        switch (opcion) {
-            case 1:
-                int contador_citas = 1; 
-                consola.mostrarMensaje("--- Citas ---");
-                for (Cita c : citas) {
-                    consola.mostrarMensaje("- " + contador_citas + ". Cita #" + c.getID() + ": " + c.getNombre());
-                    contador_citas ++;
-                }
-                int indice = consola.pedirEntrada("Seleccióna el número de cita que deseas cancelar: ");
-                Cita C = citas.get(indice-1);
-                C.setEstado("CANCELADA");
-                historial.add("Cita #" + C.getID() + " cancelada");
-                break;
-            case 2:
-                int contador_personal = 1;
-                consola.mostrarMensaje("--- Personal Disponible ---");
-                for (Medico m : trabajadores) {
-                    if(m.getDisponibilidad()) {
-                        consola.mostrarMensaje("- " + contador_personal + ". Personal #" + m.getID() + ", Especialización: " + m.getClass().getSimpleName() + ", Departamento: " + m.getDepartamento());
-                        contador_personal ++;
+            int opcion = consola.pedirEntrada("Selecciona la opción que deseas realizar: ");
+            switch (opcion) {
+                case 1:
+                    int contador_citas = 1; 
+                    consola.mostrarMensaje("--- Citas ---");
+                    for (Cita c : citas) {
+                        consola.mostrarMensaje("- " + contador_citas + ". Cita #" + c.getID() + ": " + c.getNombre());
+                        contador_citas ++;
                     }
-                }
-                break;
-            case 3:
-                consola.mostrarCitas(citas, trabajadores);
-                break;
-            case 4:
-                consola.mostrarPersonal(trabajadores);
-                break;
-            case 5:
-                consola.mostrarEficiencia(trabajadores);
-                break;
-            case 6:
-                consola.mostrarMensaje("--- Reporte de Nómia ---");
-                consola.mostrarMensaje(" - Pediatría:");
-                consola.mostrarMensaje("\nQ." + nominaDepartamento("PEDIATRÍA"));
-                consola.mostrarMensaje(" - Enfermería:");
-                consola.mostrarMensaje("\nQ." + nominaDepartamento("ENFERMERÍA"));
-                consola.mostrarMensaje(" - Farmacia:");
-                consola.mostrarMensaje("\nQ." + nominaDepartamento("FARMACIA"));
-                consola.mostrarMensaje(" - Dermatología:");
-                consola.mostrarMensaje("\nQ." + nominaDepartamento("DERMATOLOGÍA"));
-                consola.mostrarMensaje(" - Cardiología:");
-                consola.mostrarMensaje("\nQ." + nominaDepartamento("CARDIOLOGÍA"));
-                break;
-            case 7:
-                consola.mostrarMensaje("--- Análisis financiero --- \n- Q.");
-                nominaTotal();
-                break;
-            case 8: 
-                consola.mostrarHistorial(historial);
-                break;
-            case 9:
-                salir = 1;
-                break;
-            default:
-                consola.mostrarMensaje("Opción inválida");
-        }
+                    int indice = consola.pedirEntrada("Seleccióna el número de cita que deseas cancelar: ");
+                    Cita C = citas.get(indice-1);
+                    C.setEstado("CANCELADA");
+                    historial.add("Cita #" + C.getID() + " cancelada");
+                    break;
+                case 2:
+                    int contador_personal = 1;
+                    consola.mostrarMensaje("--- Personal Disponible ---");
+                    for (Medico m : trabajadores) {
+                        if(m.getDisponibilidad()) {
+                            consola.mostrarMensaje("- " + contador_personal + ". Personal #" + m.getID() + ", Especialización: " + m.getClass().getSimpleName() + ", Departamento: " + m.getDepartamento());
+                            contador_personal ++;
+                        }
+                    }
+                    break;
+                case 3:
+                    consola.mostrarCitas(citas, trabajadores);
+                    break;
+                case 4:
+                    consola.mostrarPersonal(trabajadores);
+                    break;
+                case 5:
+                    consola.mostrarEficiencia(trabajadores);
+                    break;
+                case 6:
+                    consola.mostrarMensaje("--- Reporte de Nómia ---");
+                    consola.mostrarMensaje(" - Pediatría:");
+                    consola.mostrarMensaje("\nQ." + nominaDepartamento("PEDIATRÍA"));
+                    consola.mostrarMensaje(" - Enfermería:");
+                    consola.mostrarMensaje("\nQ." + nominaDepartamento("ENFERMERÍA"));
+                    consola.mostrarMensaje(" - Farmacia:");
+                    consola.mostrarMensaje("\nQ." + nominaDepartamento("FARMACIA"));
+                    consola.mostrarMensaje(" - Dermatología:");
+                    consola.mostrarMensaje("\nQ." + nominaDepartamento("DERMATOLOGÍA"));
+                    consola.mostrarMensaje(" - Cardiología:");
+                    consola.mostrarMensaje("\nQ." + nominaDepartamento("CARDIOLOGÍA"));
+                    break;
+                case 7:
+                    consola.mostrarMensaje("--- Análisis financiero --- \n- Q.");
+                    nominaTotal();
+                    break;
+                case 8: 
+                    consola.mostrarHistorial(historial);
+                    break;
+                case 9:
+                    salir = 1;
+                    break;
+                default:
+                    consola.mostrarMensaje("Opción inválida");
+            }
         }
 
     }

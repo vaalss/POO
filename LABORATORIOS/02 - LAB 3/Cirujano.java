@@ -60,7 +60,6 @@ public class Cirujano extends Medico {
             this.disponible = false;
             return this.disponible;
         }
-        return this.disponible;;
     }
 
     @Override

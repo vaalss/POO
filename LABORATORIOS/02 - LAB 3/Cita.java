@@ -33,14 +33,14 @@ public class Cita {
         String tipoL = this.tipo.toLowerCase();
         String descL = this.descripcion.toLowerCase();
 
-        Stirng claseBuscada = "Enfermero"; //si no pide especialista o si no hay ese especialista, se va con un enfermero
-        if (tipoLower.contains("consulta") || tipoLower.contains("chequeo")) {
+        String claseBuscada = "Enfermero"; //si no pide especialista o si no hay ese especialista, se va con un enfermero
+        if (tipoL.contains("consulta") || tipoL.contains("chequeo")) {
             claseBuscada = "Doctor";
-        } else if (tipoL.contains("cirujía") || tipoLower.contains("operación")) {
+        } else if (tipoL.contains("cirujía") || tipoL.contains("operación")) {
             claseBuscada = "Cirujano";
-        } else if (tipoL.contains("medicamentos") || tipoLower.contains("receta")) {
+        } else if (tipoL.contains("medicamentos") || tipoL.contains("receta")) {
             claseBuscada = "Farmaceutico";
-        } else if (tipoL.contains("diagnóstico") || tipoLower.contains("control")) {
+        } else if (tipoL.contains("diagnóstico") || tipoL.contains("control")) {
             claseBuscada = "Enfermero";
         }   
 
