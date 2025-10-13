@@ -14,7 +14,7 @@ public class Cita {
     private String estado;
     
     public Cita(String nombre, String fecha, int horaInicio, int horaFinal, String tipo, String descripcion) {
-        this.ID += this.contador++;
+        this.ID += contador++;
         this.nombre = nombre;
         this.trabajador = null;
         this.fecha = fecha;
@@ -29,77 +29,39 @@ public class Cita {
     public void asignarMedico(ArrayList<Medico> trabajadores) { //arreglar, según departamento
         Random rand = new Random();
         ArrayList<Medico> especialistas = new ArrayList<Medico>();
-        if (this.tipo.toLowerCase().contains("consulta") || this.tipo.toLowerCase().contains("chequeo")) {
-            for (Medico m : trabajadores) { //si quiere una cita consulta o chequeo, va con un doctor
-                if (m.getClass().getSimpleName().equals("Doctor")) {
-                    especialistas.add(m);
-                    if(this.descripcion.contains("pediátra")) {
-                        for (Medico M : especialistas) {
-                            if(!M.departamento.contains("PEDIATRÍA")) {
-                                especialistas.remove(M);
-                            }
-                        }
-                    } else if (this.descripcion.contains("dermatólogo")) {
-                        for (Medico M : especialistas) {
-                            if(!M.departamento.contains("DERMATOLOGÍA")) {
-                                especialistas.remove(M);
-                            }
-                        }
-                    } else if (this.descripcion.contains("cardiólogo")) {
-                        for (Medico M : especialistas) {
-                            if(!M.departamento.contains("CARDIOLOGÍA")) {
-                                especialistas.remove(M);
-                            }
-                        }
-                    }
-                }
-            }
-        } else if (this.tipo.toLowerCase().contains("cirujía") || this.tipo.toLowerCase().contains("operación")) {
-            for (Medico m : trabajadores) {
-                if (m.getClass().getSimpleName().equals("Cirujano")) {
-                    especialistas.add(m);
-                    if(this.descripcion.contains("pediátra")) {
-                        for (Medico M : especialistas) {
-                            if(!M.departamento.contains("PEDIATRÍA")) {
-                                especialistas.remove(M);
-                            }
-                        }
-                    } else if (this.descripcion.contains("dermatólogo")) {
-                        for (Medico M : especialistas) {
-                            if(!M.departamento.contains("DERMATOLOGÍA")) {
-                                especialistas.remove(M);
-                            }
-                        }
-                    } else if (this.descripcion.contains("cardiólogo")) {
-                        for (Medico M : especialistas) {
-                            if(!M.departamento.contains("CARDIOLOGÍA")) {
-                                especialistas.remove(M);
-                            }
-                        }
-                    }
-                }
-            }
-        } else if (this.tipo.toLowerCase().contains("medicamentos") || this.tipo.toLowerCase().contains("receta")) {
-            for (Medico m : trabajadores) {
-                if (m.getClass().getSimpleName().equals("Farmaceutico")) {
-                    especialistas.add(m);
-                }
-            }
-        } else if (this.tipo.toLowerCase().contains("diagnóstico") || this.tipo.toLowerCase().contains("control")) {
-            for (Medico m : trabajadores) {
-                if (m.getClass().getSimpleName().equals("Enfermero")) {
-                    especialistas.add(m);
-                }
-            }
-        } else { //si no tiene especificación, se va con un enfermero general
-            for (Medico m : trabajadores) {
-                if (m.getClass().getSimpleName().equals("Enfermero")) {
-                    especialistas.add(m);
+
+        String tipoL = this.tipo.toLowerCase();
+        String descL = this.descripcion.toLowerCase();
+
+        Stirng claseBuscada = "Enfermero"; //si no pide especialista o si no hay ese especialista, se va con un enfermero
+        if (tipoLower.contains("consulta") || tipoLower.contains("chequeo")) {
+            claseBuscada = "Doctor";
+        } else if (tipoL.contains("cirujía") || tipoLower.contains("operación")) {
+            claseBuscada = "Cirujano";
+        } else if (tipoL.contains("medicamentos") || tipoLower.contains("receta")) {
+            claseBuscada = "Farmaceutico";
+        } else if (tipoL.contains("diagnóstico") || tipoLower.contains("control")) {
+            claseBuscada = "Enfermero";
+        }   
+
+        for (Medico m : trabajadores) { //filtra a los trabajadores por clase
+            if (m.getClass().getSimpleName().equals(claseBuscada)) {
+                especialistas.add(m);
             }
         }
-        int indice = rand.nextInt(especialistas.size());
-        Medico trabajador = especialistas.get(indice);
-        this.trabajador = trabajador;
+
+        if (descL.contains("pedi")) { //filtra a los trabajadores según su departamento
+            especialistas.removeIf(m -> !m.getDepartamento().equalsIgnoreCase("PEDIATRÍA"));
+        } else if (descL.contains("dermat")) {
+            especialistas.removeIf(m -> !m.getDepartamento().equalsIgnoreCase("DERMATOLOGÍA"));
+        } else if (descL.contains("cardio")) {
+            especialistas.removeIf(m -> !m.getDepartamento().equalsIgnoreCase("CARDIOLOGÍA"));
+        }
+
+        if (!especialistas.isEmpty()) { //si la lista de especialistas no está vacía se escoge uno de forma aleatoria
+            this.trabajador = especialistas.get(rand.nextInt(especialistas.size()));
+        } else {
+            this.trabajador = null; // si está vacía, se queda un null
         }
     }
 
@@ -149,7 +111,7 @@ public class Cita {
 
     @Override
     public String toString() {
-        return "Cita #" + this.ID + ": \n- Paciente: " + this.nombre + "\n- Médico asignado: " + this.trabajador + "\n- Fecha: " +
+        return "Cita #" + this.ID + ": \n- Paciente: " + this.nombre + "\n- Médico asignado: " + this.trabajador.getNombre() + "\n- Fecha: " +
         "\n- Hora: " + this.horaInicio + " hrs \n- Tipo de cita: " + this.tipo + "\n- Descripción: " + this.descripcion + 
         "\n- Estado: " + this.estado;
     }
