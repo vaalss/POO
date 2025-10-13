@@ -2,15 +2,17 @@ public abstract class Medico {
     protected int ID;
     protected static int contador = 0;
     protected String nombre;
+    protected String departamento;
     protected int experiencia;
     protected double salarioBase;
     protected boolean disponible;
     protected int horasTrabajadas;
     protected int atendidos;
 
-    public Medico(String nombre, int experiencia, double salarioBase, boolean disponible) {
+    public Medico(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible) {
         this.ID = this.contador++;
         this.nombre = nombre;
+        this.departamento = departamento;
         this.experiencia = experiencia;
         this.salarioBase = salarioBase;
         this.disponible = disponible;
@@ -41,6 +43,10 @@ public abstract class Medico {
 
     public String getNombre() {
         return this.nombre;
+    }
+
+    public String getDepartamento() {
+        return this.departamento;
     }
 
     public int getExperiencia() {
