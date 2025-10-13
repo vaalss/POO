@@ -82,16 +82,16 @@ public class Controller {
                 break;
             case 6:
                 consola.mostrarMensaje("--- Reporte de Nómia ---");
-                consola.mostrarMensaje(" - Pediatría: \n- Q.");
-                nominaDepartamento("PEDIATRÍA");
-                consola.mostrarMensaje(" - Enfermería: \n- Q.");
-                nominaDepartamento("ENFERMERÍA");
-                consola.mostrarMensaje(" - Farmacia: \n- Q.");
-                nominaDepartamento("FARMACIA");
-                consola.mostrarMensaje(" - Dermatología: \n- Q.");
-                nominaDepartamento("DERMATOLOGÍA");
-                consola.mostrarMensaje(" - Cardiología: \n- Q.");
-                nominaDepartamento("CARDIOLOGÍA");
+                consola.mostrarMensaje(" - Pediatría:");
+                consola.mostrarMensaje("\nQ." + nominaDepartamento("PEDIATRÍA"));
+                consola.mostrarMensaje(" - Enfermería:");
+                consola.mostrarMensaje("\nQ." + nominaDepartamento("ENFERMERÍA"));
+                consola.mostrarMensaje(" - Farmacia:");
+                consola.mostrarMensaje("\nQ." + nominaDepartamento("FARMACIA"));
+                consola.mostrarMensaje(" - Dermatología:");
+                consola.mostrarMensaje("\nQ." + nominaDepartamento("DERMATOLOGÍA"));
+                consola.mostrarMensaje(" - Cardiología:");
+                consola.mostrarMensaje("\nQ." + nominaDepartamento("CARDIOLOGÍA"));
                 break;
             case 7:
                 consola.mostrarMensaje("--- Análisis financiero --- \n- Q.");
