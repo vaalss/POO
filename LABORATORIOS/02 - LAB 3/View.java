@@ -83,8 +83,8 @@ public class View {
     }
 
     public void citasMedico(ArrayList<Cita> citas, ArrayList<Medico> trabajadores) {
-        boolean hayCitas = false;
         for (Medico m : trabajadores) {
+            boolean hayCitas = false;
             println("- Citas de " + m.getNombre() + ": ");
             for (Cita c : citas) {
                 if (c.getTrabajador().equals(m)) {
