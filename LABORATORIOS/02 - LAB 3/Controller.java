@@ -12,19 +12,19 @@ public class Controller {
     }
 
     public void instanciar() {
-        Medico m1 = new 
-        Medico m2 = new 
-        Medico m3 = new 
-        Medico m4 = new 
-        Medico m5 = new 
-        Medico m6 = new 
-        Medico m7 = new 
-        Medico m8 = new 
-        Medico m9 = new 
-        Medico m10 = new 
-        Medico m11 = new 
-        Medico m12 = new 
-        Cita c1 = new 
+        Medico m1 = new Doctor("Carlos", "PEDIATRÍA", 30, 2500.00, true, "PEDIATRÍA", 10, 150.00);
+        Medico m2 = new Farmaceutico("Raúl", "FARMACIA", 22, 1500.00, true, 55, 120.00, true);
+        Medico m3 = new Enfermero("Inés", "ENFERMERÍA", 30, 2000.00, true, "DIA", "Intensivo", 1500.00);
+        Medico m4 = new Cirujano("Ricardo", "CARDIOLOGÍA", 35, 3500.00, true, "CARDIÓLOGO", 15, 350.00, 1500.00);
+        Medico m5 = new Doctor("Lucky", "DERMATOLOGÍA", 15, 1600.50, false, "DERMATÓLOGO", 17, 100.00);
+        Medico m6 = new Farmaceutico("Alessandra", "FARMACIA", 7, 1000.50, true, 40, 95.00, false);
+        Medico m7 = new Enfermero("Andrea", "ENFERMERÍA", 6, 1750.00, true "NOCHE", "GENERAL", 1000.00);
+        Medico m8 = new Cirujano("Daniel", "PEDIATRÍA", 20, 3500.50, true, "CIRUJÁNO_PEDÍATRICO", 10, 300.00, 2000.00);
+        Medico m9 = new Doctor("Alejandro", "CARDIOLOGÍA", 20,2000.00, true, "CARDIÓLOGO", 20, 200.50);
+        Medico m10 = new Farmaceutico("Manuel", "FARMACIA", 10, 1250.50, false, 50, 100.00, true);
+        Medico m11 = new Enfermero("Sandra", "ENFERMERÍA", 27, 2000.00, true, "NOCHE", "ESPECIALISTA", 1200.00);
+        Medico m12 = new Cirujano("Oscar", "DERMATOLOGÍA",20, 3500.00, false, "CIRUJÁNO_PLÁSTICO", 15, 400.00, 1700.00);
+        Cita c1 = new Cita("Valeria Hernández", "18/10/2025", 8, 10, @)
         Cita c2 = new 
         Cita c3 = new 
         Cita c4 = new 
