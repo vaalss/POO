@@ -4,7 +4,7 @@ public class Cirujano extends Medico {
     private double tarifa;
     private double bonificacion;
 
-    public Cirujano(String tipo, int horasDisponible, double tarifa, double bonificacion) {
+    public Cirujano(String nombre, int experiencia, double salarioBase, boolean disponible, String tipo, int horasDisponible, double tarifa, double bonificacion) {
         super(nombre, experiencia, salarioBase, disponible);
         this.tipo = tipo;
         this.horasDisponible = horasDisponible;
@@ -26,5 +26,29 @@ public class Cirujano extends Medico {
 
     public getBonificacion() {
         return this.bonificacion;
+    }
+
+    public void recibirCita(Cita c) {
+        this.atendidos++;
+        int horas = c.getHoraFinal() - c.getHoraInicio();
+        this.horasDisponible -= horas;
+
+    }
+
+    public double calcularSalario(Cita c) {
+        int horas = c.getHoraFinal() - c.getHoraInicio();
+        double salario = this.salarioBase + (horas * this.tarifa);
+        if(c.getDescripcion().toLowerCase().contains("riesgo")) {
+            salario += this.bonificacion;
+        }
+        return salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Cirujano #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 
+        "\n- Experiencia: " + this.experiencia + " años \n- Salario base: Q." + this.salarioBase + "\n- Salario final: Q." + calcularSalario() +
+        "\n- Horas Trabajadas: " + this.horasTrabajadas + "\n- Pacientes atendidos: " + this.atendidos + "\n- Tipo de cirujano: " + this.tipo + 
+        "\n- Horas disponibles: " + this.horasDisponible + "\n- Tarifa por cirujía: " + this.tarifa + "\n- Bonificación por riesgo: " + this.bonificacion;    
     }
 }

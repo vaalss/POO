@@ -3,7 +3,7 @@ public class Enfermero extends Medico {
     public String nivel;
     public double bonificacion;
 
-    public Enfermero(String turno, String nivel, double bonificacion) {
+    public Enfermero(String nombre, int experiencia, double salarioBase, boolean disponible, String turno, String nivel, double bonificacion) {
         super(nombre, experiencia, salarioBase, disponible);
         this.turno = turno;
         this.nivel = nivel;
@@ -28,5 +28,26 @@ public class Enfermero extends Medico {
         } else {
             return false;
         }
+    }
+
+    public void recibirCita() {
+        this.atendidos++;
+    }
+
+    public double calcularSalario() {
+        if (this.turno.equals("NOCHE")) {
+            double salario = this.salarioBase + this.bonificacion;
+        } else {
+            double salario = this.salarioBase;
+        }
+        return salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Enfermero #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 
+        "\n- Experiencia: " + this.experiencia + " años \n- Salario base: Q." + this.salarioBase + "\n- Salario final: Q." + calcularSalario() +
+        "\n- Horas Trabajadas: " + this.horasTrabajadas + "\n- Pacientes atendidos: " + this.atendidos + "\n- Turno: " + this.turno + "\n- Nivel: " + this.nivel +
+        ((this.turno.equals("NOCHE")) ? ("\n- Bonificación por turno de noche: " + this.bonificacion) : "");    
     }
 }
