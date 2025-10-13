@@ -32,6 +32,9 @@ public class Cirujano extends Medico {
         this.atendidos++;
         int horas = c.getHoraFinal() - c.getHoraInicio();
         this.horasDisponible -= horas;
+        if (this.horasDisponible < 0) {
+            this.horasDisponible = 0;
+        }
 
     }
 
@@ -42,6 +45,15 @@ public class Cirujano extends Medico {
             salario += this.bonificacion;
         }
         return salario;
+    }
+    
+    public boolean getDisponibilidad() {
+        if (this.horasTrabajadas < this.horasDisponible) {
+            this.disponible = true;
+        } else {
+            this.disponible = false;
+        }
+        return false;
     }
 
     @Override

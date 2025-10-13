@@ -27,6 +27,15 @@ public class Farmaceutico extends Medico {
         return salario;
     }
 
+    public void getDisponibilidad() {
+        if (this.atendidos < this.prescripciones) {
+            this.disponible = true;
+        } else {
+            this.disponible = false;
+        }
+        return this.disponible;
+    }
+
     @Override
     public String toString() {
         return "Farmaceútico #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 

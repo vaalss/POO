@@ -43,6 +43,10 @@ public class Enfermero extends Medico {
         return salario;
     }
 
+    public boolean getDisponibilidad() {
+        return this.disponible;
+    }
+
     @Override
     public String toString() {
         return "Enfermero #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 

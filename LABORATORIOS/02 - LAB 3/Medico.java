@@ -24,6 +24,8 @@ public abstract class Medico {
     
     public abstract double calcularSalario();
 
+    public abstract boolean getDisponibilidad();
+
     @Override 
     public abstract String toString();
 
@@ -55,10 +57,6 @@ public abstract class Medico {
 
     public double getSalarioBase() {
         return this.salarioBase;
-    }
-
-    public boolean getDisponibilidad() {
-        return this.disponible;
     }
 
     public int getHorasTrabajadas() {

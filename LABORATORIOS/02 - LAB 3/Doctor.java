@@ -32,6 +32,15 @@ public class Doctor extends Medico {
         return salario;
     }
 
+    public boolean getDisponibilidad() {
+        if (this.atendidos < this.capacidad) {
+            this.disponible = true;
+        } else {
+            this.disponible = false;
+        }
+        return this.disponible;
+    }
+
     @Override
     public String toString() {
         return "Doctor #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 
