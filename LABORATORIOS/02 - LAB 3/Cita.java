@@ -24,19 +24,57 @@ public class Cita {
         this.estado = "PROGRAMADA";
     }
 
-    public void asignarMedico(ArrayList<Medico> trabajadores) {
+    public void asignarMedico(ArrayList<Medico> trabajadores) { //arreglar, según departamento
         Random rand = new Random();
         ArrayList<Medico> especialistas = new ArrayList<Medico>;
         if (this.tipo.toLowerCase().contains("consulta") || this.tipo.toLowerCase().contains("chequeo")) {
-            for (Medico m : trabajadores) {
+            for (Medico m : trabajadores) { //si quiere una cita consulta o chequeo, va con un doctor
                 if (m.getClass().getSimpleName().equals("Doctor")) {
                     especialistas.add(m);
+                    if(this.descripcion.contains(pediátra)) {
+                        for (Medico M : especialistas) {
+                            if(!this.departamento.contains("PEDIATRÍA")) {
+                                especialistas.remove(M);
+                            }
+                        }
+                    } else if (this.descripcion.contains("dermatólogo")) {
+                        for (Medico M : especialistas) {
+                            if(!this.departamento.contains("DERMATOLOGÍA")) {
+                                especialistas.remove(M);
+                            }
+                        }
+                    } else if (this.descripcion.contains("cardiólogo")) {
+                        for (Medico M : especialistas) {
+                            if(!this.departamento.contains("CARDIOLOGÍA")) {
+                                especialistas.remove(M);
+                            }
+                        }
+                    }
                 }
             }
         } else if (this.tipo.toLowerCase().contains("cirujía") || this.tipo.toLowerCase().contains("operación")) {
             for (Medico m : trabajadores) {
                 if (m.getClass().getSimpleName().equals("Cirujano")) {
                     especialistas.add(m);
+                    if(this.descripcion.contains(pediátra)) {
+                        for (Medico M : especialistas) {
+                            if(!this.departamento.contains("PEDIATRÍA")) {
+                                especialistas.remove(M);
+                            }
+                        }
+                    } else if (this.descripcion.contains("dermatólogo")) {
+                        for (Medico M : especialistas) {
+                            if(!this.departamento.contains("DERMATOLOGÍA")) {
+                                especialistas.remove(M);
+                            }
+                        }
+                    } else if (this.descripcion.contains("cardiólogo")) {
+                        for (Medico M : especialistas) {
+                            if(!this.departamento.contains("CARDIOLOGÍA")) {
+                                especialistas.remove(M);
+                            }
+                        }
+                    }
                 }
             }
         } else if (this.tipo.toLowerCase().contains("medicamentos") || this.tipo.toLowerCase().contains("receta")) {
@@ -49,6 +87,14 @@ public class Cita {
             for (Medico m : trabajadores) {
                 if (m.getClass().getSimpleName().equals("Enfermero")) {
                     especialistas.add(m);
+                }
+            }
+        } else { //si no tiene especificación, se va con un enfermero general
+            for (Medico m : trabajadores) {
+                if (m.getClass().getSimpleName().equals("Enfermero")) {
+                    if (m.getNivel().contains("GENERAL")) {
+                        especialistas.add(m);
+                    }
                 }
             }
         }
