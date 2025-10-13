@@ -23,25 +23,21 @@ public class Controller {
         Medico m9 = new Doctor("Alejandro", "CARDIOLOGÍA", 20,2000.00, true, "CARDIÓLOGO", 20, 200.50);
         Medico m10 = new Farmaceutico("Manuel", "FARMACIA", 10, 1250.50, false, 50, 100.00, true);
         Medico m11 = new Enfermero("Sandra", "ENFERMERÍA", 27, 2000.00, true, "NOCHE", "ESPECIALISTA", 1200.00);
-        Medico m12 = new Cirujano("Oscar", "DERMATOLOGÍA",20, 3500.00, false, "CIRUJÁNO_PLÁSTICO", 15, 400.00, 1700.00);
-        Cita c1 = new Cita("Valeria Hernández", "18/10/2025", 8, 10, @)
-        Cita c2 = new 
-        Cita c3 = new 
-        Cita c4 = new 
-        Cita c5 = new 
-        Cita c6 = new 
-        Cita c7 = new 
-        Cita c8 = new 
-        Cita c9 = new 
-        Cita c10 = new 
-        Cita c11 = new 
-        Cita c12 = new 
-        Cita c13 = new 
-        Cita c14 = new 
-        Cita c15 = new 
-        Cita c16 = new 
-        Cita c17 = new 
-        Cita c18 = new 
+        Medico m12 = new Cirujano("Oscar", "DERMATOLOGÍA",20, 3500.00, false, "CIRUJÁNO PLÁSTICO", 15, 400.00, 1700.00);
+        Cita c1 = new Cita("Valeria", "18/10/2025", 8, 10, "Consulta General", "Consulta con pediátra");
+        Cita c2 = new Cita("Javier", "18/10/2025", 8, 10, "Chequeo General", "Consulta con pediátra"),
+        Cita c3 = new Cita("Diego", "13/10/2025", 13, 23, "Operación de corazón", "Cirujía de alto riesgo");
+        Cita c4 = new Cita("Daniela", "14/10/2025", 10, 11, "Compra de medicamentos", "");
+        Cita c5 = new Cita("Adrián". "15/10/2025", 11, 12, "Control de vacunas", "");
+        Cita c6 = new Cita("José Andrés", "20/10/2025", 8, 20, "Operación de rodilla", "Operación rutinaria");
+        Cita c7 = new Cita("Marianna", "01/11/2025", 14, 15, "Consulta", "Consulta con dermatólogo");
+        Cita c8 = new Cita("David", "22/10/2025", , "", "");
+        Cita c9 = new Cita("Jorge", "21/10/2025", 9, 10, "Diagnóstico", "Consulta general");
+        Cita c10 = new Cita("Verónica", "19/10/2025", 10, 11, "Verificación de receta", "Cotización de medicamentos");
+        Cita c11 = new Cita("Mario", "02/11/2025", 11, 12, "Consulta general", "Control con cardiólogo");
+        Cita c12 = new Cita("José Fernando", "10/11/2025", 10, 12, "Diagnóstico de enfermedad", "Exámenes de sangre");
+        Cita c13 = new Cita("Sebastián", "16/10/2025", 9, 10, "Control general", "Control de niveles de azúcar");
+        Cita c14 = new Cita("Lucía", "19/10/2025", 19, 21, "Cirujía plástica", "Consulta previa con Dermatólogo");
     }
 
     public void iniciar() {
