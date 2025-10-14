@@ -45,7 +45,7 @@ public class Doctor extends Medico {
 
     @Override
     public String toString() {
-        return "Doctor #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 
+        return "Doctor #" + this.ID + ": \n- Nombre:" + this.nombre + "\n- Departamento: " + this.departamento + 
         "\n- Experiencia: " + this.experiencia + " años \n- Salario base: Q." + this.salarioBase + "\n- Salario final: Q." + calcularSalario() +
         "\n- Horas Trabajadas: " + this.horasTrabajadas + "\n- Pacientes atendidos: " + this.atendidos + "\n- Capacidad máxima/día: " + this.capacidad + 
         "\n- Tarifa por consulta: " + this.tarifa + "\n- Especialización: " + this.especializacion;    

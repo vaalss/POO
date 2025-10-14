@@ -94,8 +94,8 @@ public class Controller {
                     consola.mostrarMensaje("\nQ." + nominaDepartamento("CARDIOLOGÍA"));
                     break;
                 case 7:
-                    consola.mostrarMensaje("--- Análisis financiero --- \n- Q.");
-                    nominaTotal();
+                    consola.mostrarMensaje("--- Análisis financiero ---");
+                    consola.mostrarMensaje("\n- Q." + nominaTotal());
                     break;
                 case 8: 
                     consola.mostrarHistorial(historial);

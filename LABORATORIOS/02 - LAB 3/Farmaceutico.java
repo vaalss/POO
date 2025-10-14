@@ -40,7 +40,7 @@ public class Farmaceutico extends Medico {
 
     @Override
     public String toString() {
-        return "Farmacéutico #" + this.ID + ": \n- " + this.nombre + "\n- Departamento: " + this.departamento + 
+        return "Farmacéutico #" + this.ID + ": \n- Nombre:" + this.nombre + "\n- Departamento: " + this.departamento + 
         "\n- Experiencia: " + this.experiencia + " años \n- Salario base: Q." + this.salarioBase + "\n- Salario final: Q." + calcularSalario() +
         "\n- Horas Trabajadas: " + this.horasTrabajadas + "\n- Pacientes atendidos: " + this.atendidos + "\n- Prescripciones por día: " + this.prescripciones +
         "\n- Comision por procedimiento: " + this.comision + ((licencia) ? "\n- Licencia para sustancias controladas" : "\n- Sin licencia para sustancias controladas");    

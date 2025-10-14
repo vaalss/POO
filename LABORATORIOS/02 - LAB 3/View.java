@@ -38,6 +38,7 @@ public class View {
         println("--- Registro de cambios -");
         for (String h : historial) {
             println(" - " + h);
+            println("");
         }
     }
 
@@ -59,11 +60,17 @@ public class View {
     public void mostrarCitas(ArrayList<Cita> citas, ArrayList<Medico> trabajadores) {
         println("--- Registro de citas ---");
         citasEstado(citas, "PROGRAMADA", "Citas programadas");
+        println("");
         citasEstado(citas, "CONFIRMADA", "Citas confirmadas");
+        println("");
         citasEstado(citas, "EN PROGRESO", "Citas en progreso");
+        println("");
         citasEstado(citas, "COMPLETADA", "Citas completadas");
+        println("");
         citasEstado(citas, "CANCELADA", "Citas canceladas");
+        println("");
         citasEstado(citas, "REAGENDADA", "Citas reagendadas");
+        println("");
         citasMedico(citas, trabajadores);
 
     }
@@ -74,6 +81,7 @@ public class View {
         for (Cita c : citas) {
             if (c.getEstado().equals(estado)) {
                 println(" - " + c);
+                println("");
                 hayCitas = true;
             }
         }
@@ -89,6 +97,7 @@ public class View {
             for (Cita c : citas) {
                 if (c.getTrabajador().equals(m)) {
                     println(" - " + c);
+                    println("");
                     hayCitas = true;
                 }
             }
