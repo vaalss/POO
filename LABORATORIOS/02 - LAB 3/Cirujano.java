@@ -1,9 +1,14 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Seccion 40
+//Valeria Hernández Maldonado 25086
+
+
 public class Cirujano extends Medico {
-    private String tipo;
-    private int horasDisponible;
-    private double tarifa;
-    private double bonificacion;
-    private boolean bono;
+    private String tipo; //tipo de cirujano
+    private int horasDisponible; //cantidad de horas disponible para trabajar
+    private double tarifa; //tarifa por hora
+    private double bonificacion; //monto de bonificación por operación riesgosa
+    private boolean bono; //indica si debe sumarse el bono por riesgo o no
 
     public Cirujano(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String tipo, int horasDisponible, double tarifa, double bonificacion) {
         super(nombre, departamento, experiencia, salarioBase, disponible);
@@ -11,7 +16,7 @@ public class Cirujano extends Medico {
         this.horasDisponible = horasDisponible;
         this.tarifa = tarifa;
         this.bonificacion = bonificacion;
-        this.bono = false;
+        this.bono = false; //se inicializa como false siempre
     }
 
     public String getTipo() {
@@ -30,15 +35,15 @@ public class Cirujano extends Medico {
         return this.bonificacion;
     }
 
-    public void recibirCita(Cita c) {
-        this.atendidos++;
-        int horas = c.getHoraFinal() - c.getHoraInicio();
-        this.horasDisponible -= horas;
+    public void recibirCita(Cita c) { 
+        this.atendidos++; //al recibir una cita se incrementa el número de pacientes que ha atendido
+        int horas = c.getHoraFinal() - c.getHoraInicio(); 
+        this.horasDisponible -= horas; //disminuye la cantidad de horas que aún puede trabajar según la duración de la cita
         if (this.horasDisponible < 0) {
             this.horasDisponible = 0;
         }
         this.horasTrabajadas += horas;
-        if(c.getDescripcion().toLowerCase().contains("riesgo")) {
+        if(c.getDescripcion().toLowerCase().contains("riesgo")) { //determina si tiene bono por operación riesgos
             this.bono = true;
         }
 
@@ -46,13 +51,13 @@ public class Cirujano extends Medico {
 
     public double calcularSalario() {
         double salario = this.salarioBase + (this.horasTrabajadas * this.tarifa);
-        if (bono) {
+        if (bono) { //calcula el salario por su tarifa y horas trabajadas y ssegún si tiene o no el bono
             salario += this.bonificacion;
         }
         return salario;
     }
     
-    public boolean getDisponibilidad() {
+    public boolean getDisponibilidad() { //determina si todavía puede recibir otra cita o ya no
         if (this.horasTrabajadas < this.horasDisponible) {
             this.disponible = true;
             return this.disponible;

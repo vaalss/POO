@@ -1,13 +1,17 @@
-public abstract class Medico {
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Seccion 40
+//Valeria Hernández Maldonado 25086
+
+public abstract class Medico { //clase abstracta "padre"
     protected int ID;
     protected static int contador = 1;
     protected String nombre;
     protected String departamento;
-    protected int experiencia;
+    protected int experiencia; //años de experiencia
     protected double salarioBase;
-    protected boolean disponible;
+    protected boolean disponible; //determina si está disponible para atender o no
     protected int horasTrabajadas;
-    protected int atendidos;
+    protected int atendidos; //cantidad de pacientes que ha atendido
 
     public Medico(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible) {
         this.ID = this.contador++;
@@ -29,7 +33,7 @@ public abstract class Medico {
     @Override 
     public abstract String toString();
 
-    public String calcularEficiencia() {
+    public String calcularEficiencia() { //calcula la eficiencia segun la cantidad de pacientes atendidos y la cantidad de horas trabajadas
         if (horasTrabajadas != 0) {
             double eficiencia = (double)this.atendidos / this.horasTrabajadas;
             double redondeado = Double.parseDouble(String.format("%.2f", eficiencia));
@@ -71,11 +75,4 @@ public abstract class Medico {
         this.disponible = disponible;
     }
 
-    public void setHorasTrabajadas(int horas) {
-        this.horasTrabajadas += horas;
-    }
-
-    public void setAtendidos() {
-        this.atendidos ++;
-    }
 }

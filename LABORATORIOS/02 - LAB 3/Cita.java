@@ -1,40 +1,44 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Seccion 40
+//Valeria Hernández Maldonado 25086
+
 import java.util.Random;
 import java.util.ArrayList;
 
 public class Cita {
-    private int ID;
-    private static int contador = 1;
+    private int ID; //número de cita
+    private static int contador = 1; //contador estático para llevar el conteo general de la clase
     private String nombre;
-    private Medico trabajador;
+    private Medico trabajador; //trabajador asignado para la cita
     private String fecha;
     private int horaInicio;
     private int horaFinal;
-    private String tipo;
-    private String descripcion;
-    private String estado;
+    private String tipo; //tipo de cita
+    private String descripcion; //descripción más detallada de la cita
+    private String estado; //estado en que se encuentra la cita (CONFIRMADA, PROGRAMADA, )
     
     public Cita(String nombre, String fecha, int horaInicio, int horaFinal, String tipo, String descripcion) {
         this.ID += contador++;
         this.nombre = nombre;
-        this.trabajador = null;
+        this.trabajador = null; //se inicializa sin trabajador asignado
         this.fecha = fecha;
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
         this.tipo = tipo;
         this.descripcion = descripcion;
-        this.estado = "PROGRAMADA";
+        this.estado = "PROGRAMADA"; //se inicializa como programada
     }
 
 
-    public void asignarMedico(ArrayList<Medico> trabajadores) { //arreglar, según departamento
+    public void asignarMedico(ArrayList<Medico> trabajadores) { //asigna trabajador de forma inteligente
         Random rand = new Random();
-        ArrayList<Medico> especialistas = new ArrayList<Medico>();
+        ArrayList<Medico> especialistas = new ArrayList<Medico>(); //lista para guardar las posibles opciones de médico
 
         String tipoL = this.tipo.toLowerCase();
         String descL = this.descripcion.toLowerCase();
 
         String claseBuscada = "Enfermero"; //si no pide especialista o si no hay ese especialista, se va con un enfermero
-        if (tipoL.contains("consulta") || tipoL.contains("chequeo")) {
+        if (tipoL.contains("consulta") || tipoL.contains("chequeo")) { //según el tipo de cita se asigna con cada especialista
             claseBuscada = "Doctor";
         } else if (tipoL.contains("cirujía") || tipoL.contains("operación")) {
             claseBuscada = "Cirujano";
@@ -61,7 +65,7 @@ public class Cita {
         if (!especialistas.isEmpty()) { //si la lista de especialistas no está vacía se escoge uno de forma aleatoria
             this.trabajador = especialistas.get(rand.nextInt(especialistas.size()));
         } else {
-            this.trabajador = null; // si está vacía, se queda un null
+            this.trabajador = null; // si está vacía, se queda en null
         }
     }
 

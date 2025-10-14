@@ -1,7 +1,11 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Seccion 40
+//Valeria Hernández Maldonado 25086
+
 public class Farmaceutico extends Medico {
-    private int prescripciones;
-    private double comision;
-    private boolean licencia;
+    private int prescripciones; //límite de prescripciones que puede realizar
+    private double comision; //comision por procedimiento
+    private boolean licencia;//determina si cuenta con licencia para sustancias controladas
 
     public Farmaceutico(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, int prescripciones, double comision, boolean licencia) {
         super(nombre, departamento, experiencia, salarioBase, disponible);

@@ -1,7 +1,11 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Seccion 40
+//Valeria Hernández Maldonado 25086
+
 public class Doctor extends Medico {
-    private String especializacion;
-    private int capacidad;
-    private double tarifa;
+    private String especializacion; //especialización del medico
+    private int capacidad; //capacidad máxima de pacientes que atiende
+    private double tarifa; //tarifa por consulta 
 
     public Doctor(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String especializacion, int capacidad, double tarifa) {
         super(nombre, departamento, experiencia, salarioBase, disponible);
@@ -31,10 +35,10 @@ public class Doctor extends Medico {
     public double calcularSalario() {
         double bono = this.atendidos * this.tarifa;
         double salario = this.salarioBase + bono;
-        return salario;
+        return salario; //suma la cantidad de pacientes por la tarifa al salario base
     }
 
-    public boolean getDisponibilidad() {
+    public boolean getDisponibilidad() { //verifica si todavía puede atender a otro paciente, o ya no
         if (this.atendidos < this.capacidad) {
             this.disponible = true;
         } else {

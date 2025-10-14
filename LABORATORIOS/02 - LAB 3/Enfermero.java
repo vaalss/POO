@@ -1,7 +1,11 @@
+//Universidad del Valle de Guatemala
+//Programación Orientada a Objetos Seccion 40
+//Valeria Hernández Maldonado 25086
+
 public class Enfermero extends Medico {
-    public String turno;
-    public String nivel;
-    public double bonificacion;
+    public String turno; //NOCHE o DIA
+    public String nivel; //nivel de certificación
+    public double bonificacion; //monto de bonificación si tiene turno de noche
 
     public Enfermero(String nombre, String departamento, int experiencia, double salarioBase, boolean disponible, String turno, String nivel, double bonificacion) {
         super(nombre, departamento, experiencia, salarioBase, disponible);
@@ -22,7 +26,7 @@ public class Enfermero extends Medico {
         return this.bonificacion;
     }
 
-    public boolean bonificacionActiva() {
+    public boolean bonificacionActiva() { //determina si tiene la bonificación activa o no
         if (this.turno.equals("NOCHE")) {
             return true;
         } else {
