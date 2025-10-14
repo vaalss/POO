@@ -111,7 +111,7 @@ public class Cita {
 
     @Override
     public String toString() {
-        return "Cita #" + this.ID + ": \n- Paciente: " + this.nombre + "\n- Médico asignado: " + this.trabajador.getNombre() + "\n- Fecha: " +
+        return "Cita #" + this.ID + ": \n- Paciente: " + this.nombre + "\n- Médico asignado: " + this.trabajador.getNombre() + "\n- Fecha: " + fecha +
         "\n- Hora: " + this.horaInicio + " hrs \n- Tipo de cita: " + this.tipo + "\n- Descripción: " + this.descripcion + 
         "\n- Estado: " + this.estado;
     }

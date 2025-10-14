@@ -11,15 +11,17 @@ public class View {
     public void mostrarMenu() {
         println("");
         println("--- MENÚ DE OPCIONES ---");
-        println("1. Cancelar Cita");
-        println("2. Ver medicos disponibles");
-        println("3. Ver reporte de citas");
-        println("4. Ver reporte de personal");
-        println("5. Ver análisis de eficiencia");
-        println("6. Ver reportes de nómina");
-        println("7. Ver análisis financiero");
-        println("8. Ver historial de cambios");
-        println("9. Salir");
+        println("1. Agendar Cita");
+        println("2. Cancelar Cita");
+        println("3. Confirmar Cita");
+        println("4. Ver medicos disponibles");
+        println("5. Ver reporte de citas");
+        println("6. Ver reporte de personal");
+        println("7. Ver análisis de eficiencia");
+        println("8. Ver reportes de nómina");
+        println("9. Ver análisis financiero");
+        println("10. Ver historial de cambios");
+        println("11. Salir");
         println("");
     }
 
@@ -31,6 +33,12 @@ public class View {
         print(prompt);
         int entrada = sc.nextInt();
         sc.nextLine();
+        return entrada;
+    }
+
+    public String pedirString(String prompt) {
+        print(prompt);
+        String entrada = sc.nextLine();
         return entrada;
     }
 
