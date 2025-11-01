@@ -1,7 +1,4 @@
 public class Drone extends Equipment implements IMedible, IRegistrar {
-    
-    public String medir;
-    public String registrar;
 
     public Drone(String nombre, double consumo) {
         super(nombre, consumo);
@@ -9,11 +6,15 @@ public class Drone extends Equipment implements IMedible, IRegistrar {
 
 
     //getters
-    public String getMedir() {
-        return this.medir;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public String getRegistrar() {
-        return this.registrar();
+    public int getID() {
+        return this.ID;
+    }
+
+    public double getConsumo() {
+        return this.consumo;
     }
 }
