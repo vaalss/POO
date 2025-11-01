@@ -25,7 +25,9 @@ public class Drone extends Equipment implements IMedible, IRegistrar {
         return this.ID;
     }
 
-    public double getConsumo() {
-        return this.consumo;
+     @Override
+    public String toString() {
+        return "Dron #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +
+        "\n- Capacidades: \n  - " + "\n  - " + this.realizarMedicion() + "\n  - " + this.realizarRegistro();  
     }
 }
