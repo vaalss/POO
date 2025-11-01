@@ -1,5 +1,5 @@
 interface IMedible {
 
-    public abstract String realizarMedicion(String medicion);
+    public abstract void realizarMedicion(String medicion);
 
 }

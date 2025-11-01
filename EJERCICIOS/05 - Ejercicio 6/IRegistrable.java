@@ -1,5 +1,5 @@
 interface IRegistrable {
 
-    public abstract String realizarRegistro(String registro);
+    public abstract void realizarRegistro(String registro);
 
 }

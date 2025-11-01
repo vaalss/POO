@@ -1,5 +1,5 @@
 interface IAccionable {
     
-    public abstract String realizarAccion(String accion);
+    public abstract void realizarAccion(String accion);
 
 }
