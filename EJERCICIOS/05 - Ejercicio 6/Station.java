@@ -29,7 +29,9 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar, IMedib
         return this.ID;
     }
 
-    public double getConsumo() {
-        return this.consumo;
+    @Override
+    public String toString() {
+        return "Estación meteorológica #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +
+        "\n- Capacidades: \n  - " + this.realizarAccion() + "\n  - " + this.realizarMedicion() + "\n  - " + this.realizarRegistro();  
     }
 }
