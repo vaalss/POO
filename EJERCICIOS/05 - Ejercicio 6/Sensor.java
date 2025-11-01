@@ -4,6 +4,15 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar {
         super(nombre, consumo);
     }
 
+    @Override
+        public String realizarAccion(String accion) {
+            return "Realiza la siguiente acción: \n" + accion;
+        }
+
+    @Override
+    public String realizarRegistro(String registro) {
+        return "Realiza el siguiente registro: \n" + registro;
+    }
 
     //getters
     public String getNombre() {
