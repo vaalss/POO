@@ -1,24 +1,35 @@
 public class Sensor extends Equipment implements IAccionable, IRegistrar, IMedible {
-    
-    public String accion;
-    public String registrar;
-    public String medir;
 
     public Drone(String nombre, double consumo) {
         super(nombre, consumo);
     }
 
 
+    @Override
+    public String realizarAccion(String accion) {
+        return "Realiza la siguiente acción: \n" + accion;
+    }
+
+    @Override
+    public String realizarMedicion(String medicion) {
+        return  "Realiza la siguiente medición: \n" + medicion;
+    }
+
+    @Override
+    public String realizarRegistro(String registro) {
+        return "Realiza el siguiente registro: \n" + registro;
+    }
+
     //getters
-    public String getAccion() {
-        return this.accion;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public String getRegistrar() {
-        return this.registrar;
+    public int getID() {
+        return this.ID;
     }
 
-    public String getMedir() {
-        return this.medir;
+    public double getConsumo() {
+        return this.consumo;
     }
 }
