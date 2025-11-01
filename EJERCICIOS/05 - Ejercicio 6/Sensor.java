@@ -1,17 +1,19 @@
 public class Sensor extends Equipment implements IAccionable, IRegistrar {
 
+    private String accion, registro;
+
     public Drone(String nombre, double consumo) {
         super(nombre, consumo);
     }
 
     @Override
-        public String realizarAccion(String accion) {
-            return "Realiza la siguiente acción: \n" + accion;
-        }
+    public void realizarAccion(String accion) {
+        this.accion = "Realiza la siguiente acción: " + accion;
+    }
 
     @Override
-    public String realizarRegistro(String registro) {
-        return "Realiza el siguiente registro: \n" + registro;
+    public void realizarRegistro(String registro) {
+        this.registro = "Realiza el siguiente registro: " + registro;
     }
 
     //getters
@@ -23,7 +25,9 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar {
         return this.ID;
     }
 
-    public double getConsumo() {
-        return this.consumo;
+    @Override
+    public String toString() {
+        return "Sensor de suelo #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +
+        "\n- Capacidades: \n  - " + "\n  - " + this.accion + "\n  - " + this.registro;  
     }
 }
