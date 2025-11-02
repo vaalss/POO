@@ -6,6 +6,10 @@ public class View {
         this.sc = new Scanner(System.in);
     }
 
+    public void mostrarMensaje(String m) {
+        println(m);
+    }
+
     public mostrarMenu() {
         println("--- MENÚ ---");
         println("1. Lista de equipos");
