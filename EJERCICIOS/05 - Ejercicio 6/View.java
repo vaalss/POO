@@ -57,8 +57,10 @@ public class View {
     }
 
     public void equiposPorConsumo(ArrayList<Equipment> equipos) {
+        println("--- EQUIPOS POR CONSUMO ELÉCTRICO ---");
         for (Equipment e : equipos) {
-            println (" - " + e + "\n");
+            println (" - Equipo #" + e.getID() + "\n  - Tipo: " + e.getClass().getSimpleName() 
+            + "\n  - Consumo de energía: " + e.getConsumo());
         }
     }
 
