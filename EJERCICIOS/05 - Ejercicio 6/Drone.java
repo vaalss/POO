@@ -16,17 +16,6 @@ public class Drone extends Equipment implements IMedible, IRegistrar {
         this.registro = "Realiza el siguiente registro: \n" + registro;
     }
 
-    @Override
-
-    //getters
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public int getID() {
-        return this.ID;
-    }
-
      @Override
     public String toString() {
         return "Dron #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +

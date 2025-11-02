@@ -22,15 +22,6 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar, IMedib
         this.registro =  "Realiza el siguiente registro: " + registro;
     }
 
-    //getters
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public int getID() {
-        return this.ID;
-    }
-
     @Override
     public String toString() {
         return "Estación meteorológica #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +

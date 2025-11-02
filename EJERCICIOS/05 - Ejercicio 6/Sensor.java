@@ -16,15 +16,6 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar {
         this.registro = "Realiza el siguiente registro: " + registro;
     }
 
-    //getters
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public int getID() {
-        return this.ID;
-    }
-
     @Override
     public String toString() {
         return "Sensor de suelo #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +

@@ -11,6 +11,19 @@ public abstract class Equipment implements Comparable {
         this.consumo = consumo;
     }
 
+    //getters
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public double getConsumo() {
+        return this.consumo;
+    }
+
     @Override
     public int compareTo(Equipment otro) {
         return Integer.compare(this.consumo, otro.consumo);
