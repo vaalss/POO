@@ -11,6 +11,7 @@ public class View {
         println("1. Lista de equipos");
         println("2. Buscar equipo");
         println("3. Equipos por consumo eléctrico");
+        println("4. Salir");
     }
 
     public String pedirEntrada(String prompt) {
