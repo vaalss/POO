@@ -1,6 +1,9 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class View {
     
-    private sc Scanner;
+    private Scanner sc;
 
     public View() {
         this.sc = new Scanner(System.in);
@@ -10,7 +13,7 @@ public class View {
         println(m);
     }
 
-    public mostrarMenu() {
+    public void mostrarMenu() {
         println("--- MENÚ ---");
         println("1. Lista de equipos");
         println("2. Buscar equipo");
@@ -28,7 +31,7 @@ public class View {
         print(prompt);
         int entrada = sc.nextInt();
         sc.nextLine();
-        return int;
+        return entrada;
     }
 
     public void mostrarEquipo(ArrayList<Equipment> equipos) {
@@ -41,12 +44,12 @@ public class View {
     public Equipment buscarEquipo(ArrayList<Equipment> equipos, String buscar) {
         try {
             int id = Integer.parseInt(buscar);
-            for (Equipment e : equipo) {
+            for (Equipment e : equipos) {
                 if (e.getID() == id) {
                     return e;
                 }
             }
-        } catch (NumberFormatException) {
+        } catch (NumberFormatException E) {
             for (Equipment e : equipos) {
                 if (e.getNombre().equalsIgnoreCase(buscar)) {
                     return e;

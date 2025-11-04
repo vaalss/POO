@@ -1,9 +1,15 @@
-public class Sensor extends Equipment implements IAccionable, IRegistrar {
+public class Sensor extends Equipment implements IAccionable, IRegistrable {
 
     private String accion, registro;
 
-    public Sensor(String nombre, double consumo) {
+    public Sensor(String nombre, int consumo) {
         super(nombre, consumo);
+    }
+
+    @Override
+    public void trabajo(String accion, String medicion, String registro) {
+        this.realizarAccion(accion);
+        this.realizarRegistro(registro);
     }
 
     @Override
@@ -18,7 +24,7 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar {
 
     @Override
     public String toString() {
-        return "Sensor de suelo #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +
+        return "Sensor de suelo #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.consumo +
         "\n- Capacidades: \n  - " + "\n  - " + this.accion + "\n  - " + this.registro;  
     }
 }

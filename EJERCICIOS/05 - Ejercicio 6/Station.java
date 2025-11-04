@@ -1,11 +1,17 @@
-public class Sensor extends Equipment implements IAccionable, IRegistrar, IMedible {
+public class Station extends Equipment implements IAccionable, IRegistrable, IMedible {
 
     private String accion, medicion, registro;
 
-    public Station(String nombre, double consumo) {
+    public Station(String nombre, int consumo) {
         super(nombre, consumo);
     }
 
+    @Override
+    public void trabajo(String accion, String medicion, String registro) {
+        this.realizarAccion(accion);
+        this.realizarMedicion(medicion);
+        this.realizarRegistro(registro);
+    }
 
     @Override
     public void realizarAccion(String accion) {
@@ -24,7 +30,7 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar, IMedib
 
     @Override
     public String toString() {
-        return "Estación meteorológica #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.comsumo +
+        return "Estación meteorológica #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.consumo +
         "\n- Capacidades: \n  - " + this.accion + "\n  - " + this.medicion + "\n  - " + this.registro;  
     }
 }

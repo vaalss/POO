@@ -1,15 +1,17 @@
-public abstract class Equipment implements Comparable {
+public abstract class Equipment implements Comparable<Equipment> {
 
     protected int ID;
     protected static int contador;
     protected String nombre;
-    protected double consumo;
+    protected int consumo;
 
-    public Equipment(String nombre, double consumo) {
+    public Equipment(String nombre, int consumo) {
         this.ID = contador++;
         this.nombre = nombre;
         this.consumo = consumo;
     }
+
+    public abstract void trabajo(String accion, String medicion, String resgistro);
 
     //getters
     public String getNombre() {
@@ -20,7 +22,7 @@ public abstract class Equipment implements Comparable {
         return this.ID;
     }
 
-    public double getConsumo() {
+    public int getConsumo() {
         return this.consumo;
     }
 
