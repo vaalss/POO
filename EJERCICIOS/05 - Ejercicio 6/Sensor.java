@@ -2,7 +2,7 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar {
 
     private String accion, registro;
 
-    public Drone(String nombre, double consumo) {
+    public Sensor(String nombre, double consumo) {
         super(nombre, consumo);
     }
 

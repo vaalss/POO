@@ -2,7 +2,7 @@ public class Sensor extends Equipment implements IAccionable, IRegistrar, IMedib
 
     private String accion, medicion, registro;
 
-    public Drone(String nombre, double consumo) {
+    public Station(String nombre, double consumo) {
         super(nombre, consumo);
     }
 
