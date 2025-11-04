@@ -73,7 +73,7 @@ public class View {
         int contador = 1;
         for (Equipment e : equipos) {
             println (contador + ". Equipo #" + e.getID() + "\n  - Tipo: " + e.getClass().getSimpleName() 
-            + "\n  - Consumo de energía: " + e.getConsumo() + "\n");
+            + "\n  - Consumo de energía: " + e.getConsumo() + "W\n");
             contador ++;
         }
     }

@@ -25,6 +25,6 @@ public class Drone extends Equipment implements IMedible, IRegistrable {
      @Override
     public String toString() {
         return "Dron #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.consumo +
-        "\n- Capacidades: \n  - " + "\n  - " + this.medicion + "\n  - " + this.registro;  
+        "W\n- Capacidades: \n  - " + "\n  - " + this.medicion + "\n  - " + this.registro;  
     }
 }

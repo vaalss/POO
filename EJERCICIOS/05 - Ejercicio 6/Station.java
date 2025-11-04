@@ -31,6 +31,6 @@ public class Station extends Equipment implements IAccionable, IRegistrable, IMe
     @Override
     public String toString() {
         return "Estación meteorológica #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.consumo +
-        "\n- Capacidades: \n  - " + this.accion + "\n  - " + this.medicion + "\n  - " + this.registro;  
+        "W\n- Capacidades: \n  - " + this.accion + "\n  - " + this.medicion + "\n  - " + this.registro;  
     }
 }

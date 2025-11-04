@@ -25,6 +25,6 @@ public class Sensor extends Equipment implements IAccionable, IRegistrable {
     @Override
     public String toString() {
         return "Sensor de suelo #" + this.ID + ": \n- Nombre: " + this.nombre + "\n- Consumo de energía: " + this.consumo +
-        "\n- Capacidades: \n  - " + "\n  - " + this.accion + "\n  - " + this.registro;  
+        "W\n- Capacidades: \n  - " + "\n  - " + this.accion + "\n  - " + this.registro;  
     }
 }
