@@ -35,35 +35,46 @@ public class View {
     }
 
     public void mostrarEquipo(ArrayList<Equipment> equipos) {
+        println(" ");
         println("--- LISTADO DE EQUIPOS ---");
+        println("");
         for (Equipment e : equipos) {
-            println (" - " + e + "\n");
+            println ("- " + e + "\n");
         }
     }
 
-    public Equipment buscarEquipo(ArrayList<Equipment> equipos, String buscar) {
+    public void buscarEquipo(ArrayList<Equipment> equipos, String buscar) {
+        boolean encontrado = false;
         try {
             int id = Integer.parseInt(buscar);
             for (Equipment e : equipos) {
                 if (e.getID() == id) {
-                    return e;
+                    System.out.println (e);
+                    encontrado = true;
                 }
             }
         } catch (NumberFormatException E) {
             for (Equipment e : equipos) {
                 if (e.getNombre().equalsIgnoreCase(buscar)) {
-                    return e;
+                    System.out.println(e);
+                    encontrado = true;
                 }
             }
         }
-        return null;
+        if (!encontrado) {
+            println("Equipo no encontrado");
+        }
+        println("");
     }
 
     public void equiposPorConsumo(ArrayList<Equipment> equipos) {
         println("--- EQUIPOS POR CONSUMO ELÉCTRICO ---");
+        println(" ");
+        int contador = 1;
         for (Equipment e : equipos) {
-            println (" - Equipo #" + e.getID() + "\n  - Tipo: " + e.getClass().getSimpleName() 
-            + "\n  - Consumo de energía: " + e.getConsumo());
+            println (contador + ". Equipo #" + e.getID() + "\n  - Tipo: " + e.getClass().getSimpleName() 
+            + "\n  - Consumo de energía: " + e.getConsumo() + "\n");
+            contador ++;
         }
     }
 

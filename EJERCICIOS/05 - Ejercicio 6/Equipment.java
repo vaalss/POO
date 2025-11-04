@@ -30,4 +30,6 @@ public abstract class Equipment implements Comparable<Equipment> {
     public int compareTo(Equipment otro) {
         return Integer.compare(this.consumo, otro.consumo);
     }
+
+    public abstract String toString();
 }

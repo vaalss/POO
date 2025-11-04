@@ -77,6 +77,7 @@ public class Controller {
     }
 
     public void sistema() {
+        this.init();
         int salir = -1;
         while (salir == -1) {
             vista.mostrarMenu();
@@ -86,7 +87,10 @@ public class Controller {
                     vista.mostrarEquipo(equipos);
                     break;
                 case 2:
+                    vista.mostrarMensaje(" ");
+                    vista.mostrarMensaje("--- BUSCQUEDA DE EQUIPO ---");
                     String equipo = vista.pedirEntrada("Ingresa el nombre o ID del equipo que desees: ");
+                    vista.mostrarMensaje("");
                     vista.buscarEquipo(equipos, equipo);
                     break;
                 case 3:
